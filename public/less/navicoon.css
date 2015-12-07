@@ -1,0 +1,94 @@
+*,
+*:before,
+*:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.hamburger {
+    *zoom: 1;
+    z-index: 30;
+}
+.hamburger:before, .hamburger:after {
+    content: " ";
+    display: table;
+}
+.hamburger:after {
+    clear: both;
+}
+
+.hamburger {
+    cursor: pointer;
+    width: 30px;
+    height: 30px;
+    padding: 3px;
+    position: fixed;
+    left: 30px;
+    top: 13px;
+}
+.hamburger > div {
+    background: #f89406;
+    height: 4px;
+    margin-bottom: 4px;
+    float: left;
+    width: 100%
+}
+.hamburger > div:nth-child(1), .hamburger > div:nth-child(3) {
+    float: right;
+}
+.hamburger.active {
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+    -moz-transform:  scale(1, 1) rotateZ(180deg) translate(0, 4px);
+    -ms-transform:  scale(1, 1) rotateZ(180deg) translate(0, 4px);
+    -webkit-transform:  scale(1, 1) rotateZ(180deg) translate(0, 4px);
+    transform:  scale(1, 1) rotateZ(180deg) translate(0, 4px);
+}
+.hamburger.active > div {
+    -moz-transition: all 0.6s ease;
+    -o-transition: all 0.6s ease;
+    -webkit-transition: all 0.6s ease;
+    transition: all 0.6s ease;
+}
+.hamburger.active > div:nth-child(1), .hamburger.active > div:nth-child(3) {
+    width: 70%;
+}
+.hamburger.active > div:nth-child(2) {
+    width: 90%;
+}
+.hamburger.active > div:nth-child(1) {
+    -moz-transform:  scale(1, 1) rotateZ(45deg) translate(2px, 2px);
+    -ms-transform:  scale(1, 1) rotateZ(45deg) translate(2px, 2px);
+    -webkit-transform:  scale(1, 1) rotateZ(45deg) translate(2px, 2px);
+    transform:  scale(1, 1) rotateZ(45deg) translate(2px, 2px);
+}
+.hamburger.active > div:nth-child(3) {
+    -moz-transform:  scale(1, 1) rotateZ(-45deg) translate(2px, -2px);
+    -ms-transform:  scale(1, 1) rotateZ(-45deg) translate(2px, -2px);
+    -webkit-transform:  scale(1, 1) rotateZ(-45deg) translate(2px, -2px);
+    transform:  scale(1, 1) rotateZ(-45deg) translate(2px, -2px);
+}
+.hamburger.active.active-end {
+    -moz-transform:  scale(1, 1) rotateZ(360deg) translate(0, 0);
+    -ms-transform:  scale(1, 1) rotateZ(360deg) translate(0, 0);
+    -webkit-transform:  scale(1, 1) rotateZ(360deg) translate(0, 0);
+    transform:  scale(1, 1) rotateZ(360deg) translate(0, 0);
+}
+.hamburger.active.active-end > div {
+    width: 100%;
+}
+.hamburger.active.active-end > div:nth-child(1) {
+    -moz-transform:  scale(1, 1) rotateZ(0deg) translate(0, 0);
+    -ms-transform:  scale(1, 1) rotateZ(0deg) translate(0, 0);
+    -webkit-transform:  scale(1, 1) rotateZ(0deg) translate(0, 0);
+    transform:  scale(1, 1) rotateZ(0deg) translate(0, 0);
+}
+.hamburger.active.active-end > div:nth-child(3) {
+    -moz-transform:  scale(1, 1) rotateZ(0deg) translate(0, 0);
+    -ms-transform:  scale(1, 1) rotateZ(0deg) translate(0, 0);
+    -webkit-transform:  scale(1, 1) rotateZ(0deg) translate(0, 0);
+    transform:  scale(1, 1) rotateZ(0deg) translate(0, 0);
+}
