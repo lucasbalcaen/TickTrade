@@ -2,6 +2,8 @@
  * Created by giles on 8/12/2015.
  */
 // app/routes.js
+var ticketController = require('./controllers/serverTicketController.js');
+
 module.exports = function(app, passport) {
 
     // =====================================
@@ -30,9 +32,7 @@ module.exports = function(app, passport) {
     // =====================================
     // show the signup form
     app.get('/signup', function(req, res) {
-
         // render the page and pass in any flash data if it exists
-
         res.render('signup.ejs', { message: req.flash('signupMessage') });
     });
 
@@ -72,6 +72,19 @@ module.exports = function(app, passport) {
         failureRedirect : 'login.html', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
+
+    app.get('/ticketregistreren',function(req,res){
+        return ticketController.getTickets(req,res);
+    });
+
+    app.post('/ticketregistreren',function(req,res){
+        return ticketController.create(req,res);
+    });
+
+    app.get('/api/tickets',function(req,res){
+       return ticketController.getLast5Tickets(req,res);
+    });
+
 };
 
 // route middleware to make sure a user is logged in

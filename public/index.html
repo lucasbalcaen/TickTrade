@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app>
+<html ng-app="app">
 <head lang="en">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
@@ -60,56 +60,26 @@
             <th>Trade</th>
         </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>Club Soda Festival</td>
-                <td>Music Festival</td>
-                <td>€19.99</td>
-                <td>1</td>
-                <td>Lucas Balcaen</td>
+        <tbody ng-controller="ticketController">
+
+            <tr ng-repeat="ticket in tickets">
+                <td>{{ ticket.title }}</td>
+                <td>{{ ticket.sort }}</td>
+                <td>{{ ticket.price }}</td>
+                <td>{{ ticket.amount }}</td>
+                <td>{{ ticket.owner }}</td>
                 <td><i class="right arrow icon"></i></td>
             </tr>
-            <tr>
-                <td>Club Soda Festival</td>
-                <td>Music Festival</td>
-                <td>€19.99</td>
-                <td>1</td>
-                <td>Lucas Balcaen</td>
-                <td><i class="right arrow icon"></i></td>
-            </tr>
-            <tr>
-                <td>Club Soda Festival</td>
-                <td>Music Festival</td>
-                <td>€19.99</td>
-                <td>1</td>
-                <td>Lucas Balcaen</td>
-                <td><i class="right arrow icon"></i></td>
-            </tr>
-            <tr>
-                <td>Club Soda Festival</td>
-                <td>Music Festival</td>
-                <td>€19.99</td>
-                <td>1</td>
-                <td>Lucas Balcaen</td>
-                <td><i class="right arrow icon"></i></td>
-            </tr>
-            <tr>
-                <td>Club Soda Festival</td>
-                <td>Music Festival</td>
-                <td>€19.99</td>
-                <td>1</td>
-                <td>Lucas Balcaen</td>
-                <td><i class="right arrow icon"></i></td>
-            </tr>
+
+
         </tbody>
-
+    </table>
 </section>
-
-
 
 <script src="js/navnavigatie.js"></script>
 <script src="js/semanticinits.js"></script>
-
+<script src="./lib/angular/angular.js"></script>
 <script src="../lib/semantic-ui/semantic.min.js"></script>
+<script src="controllers/clientTicketController.js"></script>
 </body>
 </html>
