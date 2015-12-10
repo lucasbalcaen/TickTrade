@@ -3,21 +3,77 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.0.2/css/bootstrap.min.css"> <!-- load bootstrap css -->
-    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"> <!-- load fontawesome -->
-    <style>
-        body        { padding-top:80px; }
-    </style>
+    <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/semantic-ui/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="less/login.css"/>
+    <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 </head>
 <body>
-<div class="container">
+<header>
+    <div id="bovenbar">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img id="logo" src="images/logo.png">
+        <div class="ui floating labeled icon dropdown button" id="rechterheader">
+            <i class="user icon"></i>
+            <span class="text">User</span>
+            <div class="menu">
+                <div class="item">
+                    <i class="sign in icon"></i>
+                    <a href="login.html">Sign In</a>
+                </div>
+                <div class="item">
+                    <i class="add user icon"></i>
+                    <a href="register.html">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zijmenu">
+        <!-- Menu -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="werking.html">Werking</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<div class="ui container" id="formgebied">
+    <div class="ui segments">
+        <div class="ui segment">
+            <form action="/login" method="post" id="loginRegisterForm">
+                <div class="ui labeled input formdiv">
+                    <div class="ui label oranjelabel">
+                        Email:
+                    </div>
+                    <input type="text" class="form-control" name="email" placeholder="Uw email">
+                </div>
+                <div class="ui labeled input formdiv">
+                    <div class="ui label oranjelabel">
+                        Password:
+                    </div>
+                    <input type="password" class="form-control" name="password">
+                </div>
+                <button class="ui inverted orange button" id="btnLogin" name="btnLogin" type="submit">Login<i class="right arrow icon"></i></button>
+            </form>
+        </div>
+    </div>
+</div>
+<!--<div class="container">
 
     <div class="col-sm-6 col-sm-offset-3">
 
         <h1><span class="fa fa-sign-in"></span> Login</h1>
 
 
-        <!-- LOGIN FORM -->
+        &lt;!&ndash; LOGIN FORM &ndash;&gt;
         <form action="/login" method="post">
             <div class="form-group">
                 <label>Email</label>
@@ -38,7 +94,10 @@
 
     </div>
 
-</div>
-
+</div>-->
+    <script src="js/navnavigatie.js"></script>
+    <script src="js/semanticinits.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="../lib/semantic-ui/semantic.min.js"></script>
 </body>
 </html>
