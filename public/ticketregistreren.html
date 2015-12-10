@@ -9,6 +9,7 @@
     <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+
 </head>
 <body>
 <header>
@@ -44,13 +45,20 @@
         </ul>
     </div>
 </header>
+    <p class="ui centered aligned header" id="registerTitle">Registreer hier uw tickets</p>
 
-    <div class="ui container" id="formgebied">
+    <div class="ui text container">
+        <div class="ui segments">
+            <div class="ui segment">Vul onderstaand formulier volledig in om uw ticket te registreren. Vervolgens zal deze beschikbaar worden voor anderen zodat dezen een ruil kunnen voorstellen met u.</div>
+
+        </div>
+    </div>
+<div class="ui container" id="formgebied">
         <div class="ui segments">
             <div class="ui segment">
                 <form method="post" action="/ticketregistreren" id="ticketRegisterForm">
                     <div class="ui labeled input formdiv">
-                        <div class="ui label oranjelabel">
+                        <div class="ui label oranjelabel" id="labelkleur">
                             Ticket:
                         </div>
                         <input type="text" id="formTicketTitle" name="formTicketTitle" placeholder="Titel van het ticket">
