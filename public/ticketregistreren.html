@@ -3,20 +3,117 @@
 <head>
     <meta charset="UTF-8">
     <title>Registreer uw ticket</title>
+    <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/semantic-ui/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="less/ticketRegistreren.css"/>
+    <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
 </head>
 <body>
-    <form method="post" action="/ticketregistreren">
-        <label for="formTicketTitle">Titel van het ticket:</label>
-        <input type="text" id="formTicketTitle" name="formTicketTitle" /><br />
-        <label for="formTicketSort">Soort ticket:</label>
-        <input type="text" id="formTicketSort" name="formTicketSort" /><br />
-        <label for="formTicketPrice">Prijs per ticket:</label>
-        <input type="text" id="formTicketPrice" name="formTicketPrice" /><br />
-        <label for="formTicketAmount">Aantal tickets beschikbaar:</label>
-        <input type="text" id="formTicketAmount" name="formTicketAmount" /><br />
-        <label for="formTicketOwner">Ticket eigenaar:</label>
-        <input type="text" id="formTicketOwner" name="formTicketOwner" /><br />
-        <button id="btnSaveTicket" name="btnSaveTicket">Registreer ticket</button>
-    </form>
+<header>
+    <div id="bovenbar">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img id="logo" src="images/logo.png">
+        <div class="ui floating labeled icon dropdown button" id="rechterheader">
+            <i class="user icon"></i>
+            <span class="text">User</span>
+            <div class="menu">
+                <div class="item">
+                    <i class="sign in icon"></i>
+                    <a href="login.html">Sign In</a>
+                </div>
+                <div class="item">
+                    <i class="add user icon"></i>
+                    <a href="register.html">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zijmenu">
+        <!-- Menu -->
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="werking.html">Werking</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+    <div class="ui container" id="formgebied">
+        <div class="ui segments">
+            <div class="ui segment">
+                <form method="post" action="/ticketregistreren" id="ticketRegisterForm">
+                    <div class="ui labeled input formdiv">
+                        <div class="ui label oranjelabel">
+                            Ticket:
+                        </div>
+                        <input type="text" id="formTicketTitle" name="formTicketTitle" placeholder="Titel van het ticket">
+                    </div>
+                    <div class="ui dropdown selection formdiv" id="dropdownFormTicketRegister" tabindex="0" formdiv>
+                        <select name="formTicketSort">
+                            <option value="">Soort ticket</option>
+                            <option value="Music Festival">Music Festival</option>
+                            <option value="Museum Ticket">Museum Ticket</option>
+                            <option value="Expo">Expo</option>
+                        </select>
+                        <i class="dropdown icon"></i>
+                        <div class="default text">Soort ticket</div>
+                        <div class="menu transition hidden" tabindex="-1">
+                            <div class="item" data-value="Music Festival">Music Festival</div>
+                            <div class="item" data-value="Museum Ticket">Museum Ticket</div>
+                            <div class="item" data-value="Expo">Expo</div>
+                        </div>
+                    </div>
+                    <div class="ui labeled input formdiv">
+                        <div class="ui label oranjelabel">
+                            Prijs (€):
+                        </div>
+                        <input type="text" id="formTicketPrice" name="formTicketPrice" placeholder="Prijs per ticket"/>
+                    </div>
+                    <div class="ui labeled input formdiv">
+                        <div class="ui label oranjelabel">
+                            Aantal:
+                        </div>
+                        <input type="number" id="formTicketAmount" name="formTicketAmount" placeholder="Aantal tickets"/>
+                    </div>
+                    <div class="ui labeled input formdiv">
+                        <div class="ui label oranjelabel">
+                            Eigenaar:
+                        </div>
+                        <input type="text" id="formTicketOwner" name="formTicketOwner" placeholder="Naam eigenaar"/><br />
+                    </div>
+                    <button class="ui inverted orange button" id="btnSaveTicket" name="btnSaveTicket">Registreer uw ticket<i class="right arrow icon"></i></button>
+                    <!--<label for="formTicketTitle">Titel van het ticket:</label>
+                    <input type="text" id="formTicketTitle" name="formTicketTitle" /><br />-->
+
+                    <!--<label for="formTicketSort">Soort ticket:</label>
+                    <input type="text" id="formTicketSort" name="formTicketSort" /><br />-->
+                    <!--<label for="formTicketPrice">Prijs per ticket:</label>
+                    <input type="text" id="formTicketPrice" name="formTicketPrice" /><br />-->
+
+                    <!--<label for="formTicketAmount">Aantal tickets beschikbaar:</label>
+                    <input type="text" id="formTicketAmount" name="formTicketAmount" /><br />-->
+                    <!--<label for="formTicketOwner">Ticket eigenaar:</label>
+                    <input type="text" id="formTicketOwner" name="formTicketOwner" /><br />-->
+                    <!--<button id="btnSaveTicket" name="btnSaveTicket">Registreer ticket</button>-->
+
+                </form>
+            </div>
+
+        </div>
+    </div>
+
+
+
+    <script src="js/navnavigatie.js"></script>
+    <script src="js/semanticinits.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="../lib/semantic-ui/semantic.min.js"></script>
 </body>
 </html>

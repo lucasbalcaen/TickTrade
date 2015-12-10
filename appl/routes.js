@@ -88,7 +88,7 @@ module.exports = function(app, passport) {
     });
 
     app.get('/api/tickets',function(req,res){
-       return ticketController.getLast5Tickets(req,res);
+        return ticketController.getLast5Tickets(req,res);
     });
 
 };
