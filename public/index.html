@@ -20,9 +20,9 @@
             <div></div>
         </div>
         <img id="logo" src="images/logo.png">
-        <div class="ui floating labeled icon dropdown button" id="rechterheader">
+        <div class="ui floating labeled icon dropdown button" id="rechterheader" ng-controller="userController">
             <i class="user icon"></i>
-            <span class="text" id="user">User</span>
+            <span class="text" id="user">{{ currentUser.local.voornaam || "user" }}</span>
             <div class="menu">
                 <div class="item">
                     <i class="sign in icon"></i>
@@ -74,12 +74,16 @@
 
         </tbody>
     </table>
+
+    <p ng-controller="userController"> {{ user }}</p>
 </section>
 
 <script src="js/navnavigatie.js"></script>
 <script src="js/semanticinits.js"></script>
 <script src="./lib/angular/angular.js"></script>
+<script src="./lib/angular/angular-cookies.js"></script>
 <script src="../lib/semantic-ui/semantic.min.js"></script>
 <script src="controllers/clientTicketController.js"></script>
+
 </body>
 </html>

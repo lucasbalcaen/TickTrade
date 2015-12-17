@@ -3,7 +3,7 @@
  */
 // app/routes.js
 var ticketController = require('./controllers/serverTicketController.js');
-
+var userController = require('./controllers/serverUserController.js');
 module.exports = function(app, passport) {
 
     // =====================================
@@ -12,6 +12,8 @@ module.exports = function(app, passport) {
     app.get('/', function(req, res) {
         res.sendfile('./public/index.html');
     });
+
+
 
     // =====================================
     // LOGIN ===============================
@@ -38,7 +40,7 @@ module.exports = function(app, passport) {
     });
 
 
-    app.get('/werking', function(req, res) {
+    app.get('/werking', isLoggedIn ,function(req, res) {
 
         res.sendfile('./public/werking.html');
     });
@@ -51,9 +53,12 @@ module.exports = function(app, passport) {
     // we will want this protected so you have to be logged in to visit
     // we will use route middleware to verify this (the isLoggedIn function)
     app.get('/profile', isLoggedIn, function(req, res) {
-        res.render('profile.ejs', {
-            user : req.user // get the user out of session and pass to template
-        });
+      //  res.render('profile.ejs', {
+       //     user : req.user // get the user out of session and pass to template
+       // });
+        res.json(req.user);
+       // res.redirect('/');
+
     });
 
     // =====================================
@@ -74,10 +79,15 @@ module.exports = function(app, passport) {
     }));
 
     app.post('/login', passport.authenticate('local-login', {
-        successRedirect : 'index.html', // redirect to the secure profile section
+        successRedirect : '/', // redirect to the secure profile section
         failureRedirect : 'login.html', // redirect back to the signup page if there is an error
         failureFlash : true // allow flash messages
     }));
+
+    app.get('/api/getuser', function(req,res){
+        res.json(req.user);
+       // return userController.getUser(req,res);
+    });
 
     app.get('/ticketregistreren',function(req,res){
         return ticketController.getTickets(req,res);
@@ -101,5 +111,5 @@ function isLoggedIn(req, res, next) {
         return next();
 
     // if they aren't redirect them to the home page
-    res.redirect('/');
+    res.redirect('/login');
 }

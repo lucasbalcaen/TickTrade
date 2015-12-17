@@ -1,6 +1,6 @@
 var express = require('express');
 var path = require('path');
-var favicon = require('serve-favicon');
+
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
@@ -31,15 +31,18 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 
+
 app.set('view engine','jade');
 //app.use('/', routes);
 //app.use('/users', users);
 
 // required for passport
-app.use(session({ secret: 'ilovescotchscotchyscotchscotch' })); // session secret
+app.use(session({ secret: 'ilovescotchscotchyscotchscotch',cookie: { httpOnly: false } })); // session secret
 app.use(passport.initialize());
 app.use(passport.session()); // persistent login sessions
 app.use(flash()); // use connect-flash for flash messages stored in session
+
+
 
 // routes ======================================================================
 require('./appl/routes.js')(app, passport); // load our routes and pass in our app and fully configured passport
@@ -74,6 +77,11 @@ app.use(function(err, req, res, next) {
     error: {}
   });
 });
+
+
+
+
+
 
 
 module.exports = app;
