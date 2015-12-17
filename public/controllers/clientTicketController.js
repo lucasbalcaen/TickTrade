@@ -26,7 +26,7 @@
     }]);
 
 
-    app.controller('ticketController',["$scope","$http",ticketController]);
+    app.controller('ticketController',["$scope","$http",ticketController]) ;
 
 
 
