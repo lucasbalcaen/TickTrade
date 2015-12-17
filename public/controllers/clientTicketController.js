@@ -1,11 +1,11 @@
 /**
- * Created by lucas on 9/12/2015.
+ * Created by giles on 9/12/2015.
  */
 
-(function () {
+(function (app) {
     "use strict";
 
-    var app = angular.module("app", []);
+
 
     console.log("Ik kom in mijn client Ticket Controller");
 
@@ -16,7 +16,18 @@
         });
     };
 
-    angular.module("app")
-        .controller("ticketController", ["$scope", "$http", ticketController]);
 
-})();
+
+    app.controller('userController', ['$scope', '$http', function($scope, $http) {
+        $http.get("http://localhost:3000/api/getUser").then(function (result) {
+            $scope.currentUser = result.data;
+
+        })
+    }]);
+
+
+    app.controller('ticketController',["$scope","$http",ticketController]) ;
+
+
+
+})(angular.module("app", ['ngCookies']));
