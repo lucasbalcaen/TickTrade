@@ -53,6 +53,9 @@ module.exports = function(app, passport) {
     app.get('/overzichttickets',function(req,res){
         res.sendfile('./public/overzichttickets.html');
     });
+    app.get('/mytickets',function(req,res){
+        res.sendfile('./public/mytickets.html');
+    });
 
     // process the signup form
     // app.post('/signup', do all our passport stuff here);
