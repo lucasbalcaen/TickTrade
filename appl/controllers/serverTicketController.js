@@ -10,7 +10,8 @@ exports.create = function(req,res)
         sort: req.body.formTicketSort,
         price: req.body.formTicketPrice,
         amount: req.body.formTicketAmount,
-        owner: req.body.formTicketOwner
+        owner: req.user.local.voornaam,
+        user: req.user._id
     });
 
     entry.save();
@@ -38,5 +39,14 @@ exports.getAllTickets = function(req,res){
         res.json(results);
     });
 };
+
+exports.getMyTickets = function(req,res){
+    var user = req.user._id;
+
+    var query = Ticket.find({"user":user.toString()});
+    query.exec(function(err,results){
+        res.json(results);
+    });
+}
 
 

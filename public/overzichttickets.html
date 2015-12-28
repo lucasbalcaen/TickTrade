@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="overzicht">
+<html ng-app="mytickets">
 <head lang="en" >
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
@@ -45,7 +45,7 @@
     </div>
 </header>
 
-<div class="ui grid" ng-controller="alleTicketsInOverzichtController">
+<div class="ui grid" ng-controller="myTicketsController">
     <div class="three wide computer three wide tablet sixteen wide mobile column">
         <div class="ui segment">
             <div class="ui icon input">
@@ -54,71 +54,7 @@
             </div>
 
         </div>
-        <div class="ui segment">
-            <div class="ui vertical accordion menu">
-                <div class="item">
-                    <a class="title">
-                        <i class="dropdown icon"></i>
-                        Sort
-                    </a>
-                    <div class="content">
-                        <div class="ui form">
-                            <div class="grouped fields">
-                                <div class="field">
-                                    <div class="ui checkbox">
-                                        <input type="checkbox" name="musicf" value="Music Festival" ng-click="includeSort('Music')">
-                                        <label>Music Festival</label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="ui checkbox">
-                                        <input type="checkbox" name="museum" value="Museum" ng-click="includeSort('Museum Ticket')">
-                                        <label>Museum</label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="ui checkbox">
-                                        <input type="checkbox" name="expo" ng-click="includeSort('Expo')" >
-                                        <label>Expo</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="item">
-                    <a class="title">
-                        <i class="dropdown icon"></i>
-                        Price
-                    </a>
-                    <div class="content">
-                        <div class="ui form">
-                            <div class="grouped fields">
-                                <div class="field">
-                                    <div class="ui checkbox">
-                                        <input type="checkbox" name="between010">
-                                        <label>0-10</label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="ui checkbox">
-                                        <input type="checkbox" name="between1020">
-                                        <label>10-20</label>
-                                    </div>
-                                </div>
-                                <div class="field">
-                                    <div class="ui checkbox">
-                                        <input type="checkbox" name="20plus">
-                                        <label>20+</label>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+  </div>
     <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
         <div class="ui segment restylah">
             <table>
@@ -134,7 +70,7 @@
                 </thead>
                 <tbody >
 
-                <tr ng-repeat="ticket in overzichttickets | filter:filterQuery | filter:sortFilter">
+                <tr ng-repeat="ticket in mytickets | filter:filterQuery | filter:sortFilter">
                     <td>{{ ticket.title }}</td>
                     <td>{{ ticket.sort }}</td>
                     <td>{{ ticket.price }}</td>
@@ -155,7 +91,7 @@
 <script src="../lib/semantic-ui/semantic.min.js"></script>
 
 <script src="./lib/angular/angular.js"></script>
-<script src="controllers/clientOverzichtTicketsController.js"></script>
+<script src="controllers/clientMyTicketsController.js"></script>
 
 </body>
 </html>

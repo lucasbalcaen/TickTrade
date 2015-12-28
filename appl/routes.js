@@ -113,7 +113,13 @@ module.exports = function(app, passport) {
 
     app.get('/api/overzichttickets',function(req,res){
         return ticketController.getAllTickets(req,res);
-    })
+    });
+
+    app.get('/api/mytickets',function(req,res){
+        return ticketController.getMyTickets(req,res);
+    });
+
+
 
 };
 
