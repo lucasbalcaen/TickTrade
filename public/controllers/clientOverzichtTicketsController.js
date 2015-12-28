@@ -5,10 +5,23 @@
     "use strict";
 
     overzicht.controller('alleTicketsInOverzichtController', ['$scope', '$http', function($scope, $http) {
-        $http.get("//api/overzichttickets").then(function (result) {
+        $http.get("/api/overzichttickets").then(function (result) {
             $scope.overzichttickets = result.data;
 
         })
     }]);
 
-})(angular.module("overzicht", ['']));
+    overzicht.controller('userController', ['$scope', '$http', function($scope, $http, $rootScope) {
+        $http.get("/api/getUser").then(function (result) {
+            $scope.currentUser = result.data;
+
+            if(result.data==="") {
+                $scope.loggedIn = false;
+            }else{
+                $scope.loggedIn = true;
+            }
+
+        })
+    }]);
+
+})(angular.module("overzicht",[]));
