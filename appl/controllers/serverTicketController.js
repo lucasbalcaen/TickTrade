@@ -32,3 +32,11 @@ exports.getLast5Tickets = function(req,res)
             res.json(results)});
 };
 
+exports.getAllTickets = function(req,res){
+    var query = Ticket.find();
+    query.exec(function(err,results){
+        res.json(results);
+    });
+};
+
+

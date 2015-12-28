@@ -46,8 +46,11 @@ module.exports = function(app, passport) {
     });
 
     app.get('/ticketregistreren', function(req, res) {
-
         res.sendfile('./public/ticketregistreren.html');
+    });
+
+    app.get('/overzichttickets',function(req,res){
+        res.sendfile('./public/overzichttickets.html');
     });
 
     // process the signup form
@@ -106,6 +109,10 @@ module.exports = function(app, passport) {
     app.get('/api/tickets',function(req,res){
         return ticketController.getLast5Tickets(req,res);
     });
+
+    app.get('/api/overzichttickets',function(req,res){
+        return ticketController.getAllTickets(req,res);
+    })
 
 };
 

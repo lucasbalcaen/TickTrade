@@ -17,7 +17,6 @@
     };
 
 
-
     app.controller('userController', ['$scope', '$http', function($scope, $http) {
         $http.get("/api/getUser").then(function (result) {
             $scope.currentUser = result.data;
