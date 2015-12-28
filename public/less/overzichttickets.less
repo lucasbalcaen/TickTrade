@@ -4,11 +4,12 @@
 *{
   margin: 0;
   padding:0;
+
 }
 
 body{
   position:relative;
-
+  background-color: #f4f4f4;
 
 }
 
@@ -93,4 +94,74 @@ header{
   font-size: 15px;
   text-decoration: none;
   text-transform: uppercase;
+}
+
+table {
+  font-family: 'Oswald', sans-serif;
+  border-collapse: collapse;
+}
+
+tr {
+  width: 100%;
+}
+
+th {
+  text-align: left;
+  font-weight: bold;
+}
+
+td:first-child{
+  width: 50%;
+}
+
+td:nth-child(2){
+  width: 15%;
+}
+
+td:nth-child(3){
+  width: 5%;
+}
+td:nth-child(4){
+  width: 5%;
+}
+td:nth-child(6){
+  width: 5%;
+}
+
+
+th, td {
+  background-color: white;
+  font-size: 16px;
+  line-height: 20px;
+  height: 20px;
+  padding: 10px 20px 10px 20px;
+}
+
+td {
+  border-left: 2px solid #EAEDF2;
+  border-bottom: 2px solid #EAEDF2;
+}
+
+th{
+  border-left: 2px solid #EAEDF2;
+  border-bottom: 2px solid #EAEDF2;
+  color: @oranjekleur;
+}
+
+td:first-child, th:first-child {
+  border-left: 0;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+
+}
+
+td:last-child {
+  font-size: 18px;
+  text-align: center;
+}
+
+#restylah{
+  background:red;
 }

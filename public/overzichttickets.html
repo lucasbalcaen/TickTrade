@@ -44,33 +44,41 @@
         </ul>
     </div>
 </header>
-<div class="ui grid">
-    <div class="three wide computer three wide tablet three wide mobile column">
+
+<div class="ui grid" ng-controller="alleTicketsInOverzichtController">
+    <div class="three wide computer three wide tablet sixteen wide mobile column">
+        <div class="ui segment">
+            <div class="ui icon input">
+                <i class="search icon"></i>
+                <input type="text" placeholder="Search..." id="searchinImagesText" data-ng-model="filterQuery" class="form-control"  />
+            </div>
+
+        </div>
         <div class="ui segment">
             <div class="ui vertical accordion menu">
                 <div class="item">
                     <a class="title">
                         <i class="dropdown icon"></i>
-                        Soort
+                        Sort
                     </a>
                     <div class="content">
                         <div class="ui form">
                             <div class="grouped fields">
                                 <div class="field">
                                     <div class="ui checkbox">
-                                        <input type="checkbox" name="musicf">
+                                        <input type="checkbox" name="musicf" value="Music Festival" ng-click="includeSort('Music')">
                                         <label>Music Festival</label>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="ui checkbox">
-                                        <input type="checkbox" name="museum">
+                                        <input type="checkbox" name="museum" value="Museum" ng-click="includeSort('Museum Ticket')">
                                         <label>Museum</label>
                                     </div>
                                 </div>
                                 <div class="field">
                                     <div class="ui checkbox">
-                                        <input type="checkbox" name="expo">
+                                        <input type="checkbox" name="expo" ng-click="includeSort('Expo')" >
                                         <label>Expo</label>
                                     </div>
                                 </div>
@@ -111,8 +119,8 @@
             </div>
         </div>
     </div>
-    <div class="thirteen wide column">
-        <div class="ui segment">
+    <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+        <div class="ui segment restylah">
             <table>
                 <thead>
                 <tr>
@@ -124,9 +132,9 @@
                     <th>Trade</th>
                 </tr>
                 </thead>
-                <tbody ng-controller="alleTicketsInOverzichtController">
+                <tbody >
 
-                <tr ng-repeat="ticket in overzichttickets">
+                <tr ng-repeat="ticket in overzichttickets | filter:filterQuery | filter:sortFilter">
                     <td>{{ ticket.title }}</td>
                     <td>{{ ticket.sort }}</td>
                     <td>{{ ticket.price }}</td>
