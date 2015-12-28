@@ -1,0 +1,75 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  position: relative;
+}
+header {
+  width: 100%;
+  background-color: #2d3e50;
+}
+#headerimage {
+  width: 100%;
+}
+#bovenbar {
+  width: 100%;
+  height: 60px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+#rechterheader {
+  background-color: lightgrey;
+  color: #555555;
+  position: absolute;
+  top: 10px;
+  right: 30px;
+}
+#rechterheader a {
+  text-decoration: none;
+  color: #f89406;
+}
+#rechterheader .item i {
+  color: #f89406;
+}
+#logo {
+  width: 160px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: 15px;
+  display: block;
+}
+.zijmenu {
+  left: -285px;
+  background-color: #555555;
+  height: 100%;
+  position: fixed;
+  width: 285px;
+  top: 0px;
+}
+.zijmenu ul {
+  border-top: 1px solid #636366;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  padding-top: 50px;
+}
+.zijmenu li {
+  border-bottom: 1px solid #636366;
+  font-family: 'Open Sans', sans-serif;
+  line-height: 45px;
+  padding-bottom: 3px;
+  padding-left: 20px;
+  padding-top: 3px;
+}
+.zijmenu a {
+  color: #fff;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+.zijmenu a:hover {
+  color: #f89406;
+  font-size: 15px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
