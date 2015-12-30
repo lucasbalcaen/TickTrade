@@ -46,17 +46,17 @@
 </header>
 
 <div class="ui grid" ng-controller="alleTicketsInOverzichtController">
-    <div class="three wide computer three wide tablet sixteen wide mobile column">
+    <div class="kleinvak">
         <div class="ui segment">
-            <div class="ui icon input">
+            <div class="ui icon input vol">
                 <i class="search icon"></i>
                 <input type="text" placeholder="Search..." id="searchinImagesText" data-ng-model="filterQuery" class="form-control"  />
             </div>
 
         </div>
-        <div class="ui segment">
-            <div class="ui vertical accordion menu">
-                <div class="item">
+        <div class="ui segment  ">
+            <div class="ui vertical accordion menu" id="volledrop">
+                <div class="item ">
                     <a class="title">
                         <i class="dropdown icon"></i>
                         Sort
@@ -119,7 +119,7 @@
             </div>
         </div>
     </div>
-    <div class="thirteen wide computer thirteen wide tablet sixteen wide mobile column">
+    <div class="grootvak">
         <div class="ui segment restylah">
             <table>
                 <thead>
