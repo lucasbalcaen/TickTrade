@@ -20,6 +20,11 @@ module.exports = function(app, passport) {
         res.sendfile('./public/login.html');
     });
 
+    app.get('/testtraded', function(req, res) {
+
+        res.sendfile('./public/testtraded.html');
+    });
+
     app.get('/signup', function(req, res) {
         res.sendfile('./public/register.html');
     });
@@ -39,6 +44,9 @@ module.exports = function(app, passport) {
 
     app.get('/mytickets',function(req,res){
         res.sendfile('./public/mytickets.html');
+    });
+    app.get('/mytraded',function(req,res){
+        res.sendfile('./public/mytraded.html');
     });
 
     app.get('/profile', isLoggedIn, function(req, res) {
@@ -74,6 +82,10 @@ module.exports = function(app, passport) {
         return ticketController.getMyTickets(req,res);
     });
 
+    app.get('/api/mytraded',function(req,res){
+        return ticketController.getMyTraded(req,res);
+    });
+
     // alle posts in de nav *******************************************************************
 
     app.post('/signup', passport.authenticate('local-signup', {
@@ -90,6 +102,10 @@ module.exports = function(app, passport) {
 
     app.post('/ticketregistreren',function(req,res){
         return ticketController.create(req,res);
+    });
+
+    app.post('/testtraded',function(req,res){
+        return ticketController.createTraded(req,res);
     });
 
 
