@@ -13,6 +13,15 @@
 </head>
 <body>
 <header>
+    <!-- cdn for modernizr, if you haven't included it already -->
+    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
+    <!-- polyfiller file to detect and load polyfills -->
+    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
+    <script>
+        webshims.setOptions('waitReady', false);
+        webshims.setOptions('forms-ext', {types: 'date'});
+        webshim.polyfill('forms forms-ext');
+        </script>
     <div id="bovenbar">
         <div class="hamburger">
             <div></div>
@@ -92,9 +101,16 @@
                     </div>
                     <div class="ui labeled input formdiv">
                         <div class="ui label oranjelabel">
-                            Eigenaar:
+                            Datum:
                         </div>
-                        <input type="text" id="formTicketOwner" name="formTicketOwner" placeholder="Naam eigenaar"/><br />
+                        <input type="date" id="formDatum" name="formDatum" placeholder="Datum evenement"/><br />
+                    </div>
+
+                    <div class="ui labeled input formdiv">
+                        <div class="ui label oranjelabel">
+                            Stad:
+                        </div>
+                        <input type="text" id="formCity" name="formCity" placeholder="Stad evenement"/><br />
                     </div>
                     <button class="ui inverted orange button" id="btnSaveTicket" name="btnSaveTicket">Registreer uw ticket<i class="right arrow icon"></i></button>
                 </form>

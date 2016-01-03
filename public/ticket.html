@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html ng-app="oneticket">
+<head lang="en">
+    <meta charset="UTF-8">
+    <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
+
+    <title></title>
+</head>
+<body>
+
+<div ng-controller="oneTicketController" id="controllerbody">
+ {{ticketje}}
+
+
+
+        <p id="city">{{ ticketje.title }}</p>
+</div>
+
+<div id="map" style="height:500px; width:100%">
+
+</div>
+
+
+
+
+<script async defer
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvO-U5oFfCuHIpssuoHkixKpoIalS-cdI&callback=initMap">
+</script>
+
+<script src="../lib/angular/angular.js"></script>
+<script src="../lib/angular/angular-route.js"></script>
+<script src="../controllers/clientOneTicketController.js"></script>
+</body>
+</html>

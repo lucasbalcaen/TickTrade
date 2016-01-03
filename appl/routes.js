@@ -29,12 +29,17 @@ module.exports = function(app, passport) {
         res.sendfile('./public/werking.html');
     });
 
-    app.get('/ticketregistreren', function(req, res) {
+    app.get('/ticketregistreren',isLoggedIn, function(req, res) {
         res.sendfile('./public/ticketregistreren.html');
     });
 
     app.get('/overzichttickets',function(req,res){
         res.sendfile('./public/overzichttickets.html');
+    });
+
+    app.get('/overzichttickets/:id',function(req,res){
+
+        res.sendfile('./public/ticket.html');
     });
 
     app.get('/mytickets',function(req,res){
@@ -50,7 +55,7 @@ module.exports = function(app, passport) {
         res.redirect('/');
     });
 
-    app.get('/ticketregistreren',function(req,res){
+    app.get('/ticketregistreren',isLoggedIn,function(req,res){
         return ticketController.getTickets(req,res);
     });
 
@@ -72,6 +77,11 @@ module.exports = function(app, passport) {
 
     app.get('/api/mytickets',function(req,res){
         return ticketController.getMyTickets(req,res);
+    });
+
+    app.get('/api/oneticket',function(req,res){
+       // return ticketController.getOneTicket(req,res);
+        return req.toString();
     });
 
     // alle posts in de nav *******************************************************************

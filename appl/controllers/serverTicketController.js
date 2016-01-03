@@ -5,18 +5,25 @@ var Ticket = require('../models/ticket.js');
 
 exports.create = function(req,res)
 {
-    var entry = new Ticket({
-        title: req.body.formTicketTitle,
-        sort: req.body.formTicketSort,
-        price: req.body.formTicketPrice,
-        amount: req.body.formTicketAmount,
-        owner: req.user.local.voornaam,
-        user: req.user._id
-    });
 
-    entry.save();
+        var entry = new Ticket({
+            title: req.body.formTicketTitle,
+            sort: req.body.formTicketSort,
+            price: req.body.formTicketPrice,
+            amount: req.body.formTicketAmount,
+            owner: req.user.local.voornaam,
+            user: req.user._id,
+            city: req.body.formCity,
+            datum:req.body.formDatum
 
-    res.redirect('index.html');
+
+        });
+
+        entry.save();
+
+        res.redirect('index.html');
+
+
 
 };
 
@@ -47,6 +54,20 @@ exports.getMyTickets = function(req,res){
     query.exec(function(err,results){
         res.json(results);
     });
-}
+
+
+};
+
+exports.getOneTicket = function(req,res){
+
+    res.send(req.toString());
+
+  /*  var user = req.user._id;
+
+    var query = Ticket.find({"user":user.toString()});
+    query.exec(function(err,results){
+        res.json(results);
+    });*/
+};
 
 

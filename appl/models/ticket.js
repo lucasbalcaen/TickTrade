@@ -11,6 +11,8 @@ var ticketScheme = mongoose.Schema({
     amount: String,
     owner: String,
     user: String,
+    city: String,
+    datum:String,
     createdOn: {type:Date,default:Date.now}
 
 });
