@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="mytraded">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
+    <link rel="stylesheet" type="text/css" href="../lib/semantic-ui/semantic.min.css">
+    <link rel="stylesheet" type="text/css" href="less/mytraded.css"/>
+    <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
+    <title></title>
+</head>
+<body>
+<header>
+    <div id="bovenbar">
+        <div class="hamburger">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+        <img id="logo" src="images/logo.png" >
+        <div class="ui floating labeled icon dropdown button" id="rechterheader" ng-controller="userController">
+            <i class="user icon"></i>
+            <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
+            <div class="menu">
+                <div class="item">
+                    <i class="sign in icon"></i>
+                    <a href="/login">Sign In</a>
+                </div>
+                <div class="item">
+                    <i class="add user icon"></i>
+                    <a href="/signup">Register</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="zijmenu">
+        <!-- Menu -->
+        <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/werking">Werking</a></li>
+            <li><a href="#">Help</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </div>
+</header>
+
+<p>My traded tickets</p>
+<div id="divkaartjes">
+<div class="ui two column very relaxed grid" ng-controller="myTradedController"  >
+    <div class="column" ng-repeat="traded in mytraded">
+        <div class="ui card" id="kaart1">
+            <div class="content">
+                <span class="right floated"><i class="ticket icon"></i>  {{ traded.amount }} </span>
+                <div class="header">
+                    {{ traded.title }}
+                </div>
+                <div class="content">
+                    {{ traded.sort }}
+                    <span class="right floated"><i class="euro icon"></i>  {{ traded.price }} </span>
+                </div>
+                <div class="description">
+                    <span><i class="user icon"></i>  {{ traded.owner }} </span>
+
+                </div>
+                <div class="description">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+    <div class="ui vertical divider">
+   traded for
+    </div>
+    <div class="column" ng-repeat="traded in mytraded">
+        <div class="ui card" id="kaart2">
+            <div class="content">
+                <span class="right floated"><i class="ticket icon"></i>  {{ traded.amount2 }} </span>
+                <div class="header">
+                    {{ traded.title2 }}
+                </div>
+                <div class="content">
+                    {{ traded.sort2 }}
+                    <span class="right floated"><i class="euro icon"></i>  {{ traded.price2 }} </span>
+                </div>
+                <div class="description">
+                    <span><i class="user icon"></i>  {{ traded.owner2 }} </span>
+
+                </div>
+                <div class="description">
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+</div>
+    <script src="js/navnavigatie.js"></script>
+    <script src="js/semanticinits.js"></script>
+    <script src="./lib/angular/angular.js"></script>
+    <script src="./lib/angular/angular-cookies.js"></script>
+    <script src="../lib/semantic-ui/semantic.min.js"></script>
+<script src="controllers/clientMyTradedTicketsController.js"></script>
+</body>
+</html>

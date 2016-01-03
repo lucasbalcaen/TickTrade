@@ -128,8 +128,9 @@ td:last-child {
   font-size: 18px;
   text-align: center;
 }
-#restylah {
-  background: red;
+#segment1 {
+  background: #f4f4f4;
+  border: none box-sha;
 }
 .kleinvak {
   width: 20%;
