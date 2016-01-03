@@ -79,6 +79,11 @@ module.exports = function(app, passport) {
         return ticketController.getMyTickets(req,res);
     });
 
+    app.get('/api/mytraded',function(req,res){
+        return ticketController.getMyTickets(req,res);
+    });
+
+
     app.get('/api/oneticket',function(req,res){
        // return ticketController.getOneTicket(req,res);
         return req.toString();
