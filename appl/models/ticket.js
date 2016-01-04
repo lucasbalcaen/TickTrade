@@ -7,6 +7,7 @@ var mongoose = require('mongoose');
 var ticketScheme = mongoose.Schema({
     title: String,
     sort: String,
+    description: String,
     price: String,
     amount: String,
     owner: String,

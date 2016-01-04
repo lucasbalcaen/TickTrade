@@ -9,6 +9,7 @@ exports.create = function(req,res)
         var entry = new Ticket({
             title: req.body.formTicketTitle,
             sort: req.body.formTicketSort,
+            description: req.body.formTicketDescription,
             price: req.body.formTicketPrice,
             amount: req.body.formTicketAmount,
             owner: req.user.local.voornaam,
