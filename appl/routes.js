@@ -80,7 +80,7 @@ module.exports = function(app, passport) {
     });
 
     app.get('/api/mytraded',function(req,res){
-        return ticketController.getMyTickets(req,res);
+        return ticketController.getMyTraded(req,res);
     });
 
 

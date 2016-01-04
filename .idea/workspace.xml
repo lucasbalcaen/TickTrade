@@ -2,10 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2aa9c3c-cdc4-4ac7-a73b-2fce7e043951" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appl/controllers/serverTicketController.js" afterPath="$PROJECT_DIR$/appl/controllers/serverTicketController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/ticket.html" afterPath="$PROJECT_DIR$/public/ticket.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appl/models/ticket.js" afterPath="$PROJECT_DIR$/appl/models/ticket.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/ticketregistreren.html" afterPath="$PROJECT_DIR$/public/ticketregistreren.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mytraded.html" afterPath="$PROJECT_DIR$/public/mytraded.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/mytraded.less" afterPath="$PROJECT_DIR$/public/less/mytraded.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/overzichttickets.html" afterPath="$PROJECT_DIR$/public/overzichttickets.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appl/routes.js" afterPath="$PROJECT_DIR$/appl/routes.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TickTrade.iws" />
@@ -28,46 +28,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="ticket.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/ticket.html">
+      <file leaf-file-name="overzichttickets.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/overzichttickets.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.53346455">
-              <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="serverTicketController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/appl/controllers/serverTicketController.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
-              <folding>
-                <element signature="e#0#41#0" expanded="false" />
-                <element signature="e#721#794#0" expanded="false" />
-                <element signature="e#841#998#0" expanded="false" />
-                <element signature="e#1042#1149#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ticket.less" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/less/ticket.less">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-17.615385">
-              <caret line="120" column="15" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-8.5">
-              <caret line="62" column="124" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="124" />
+            <state vertical-scroll-proportion="0.36220473">
+              <caret line="81" column="137" selection-start-line="81" selection-start-column="137" selection-end-line="81" selection-end-column="137" />
               <folding />
             </state>
           </provider>
@@ -112,7 +77,6 @@
         <option value="$PROJECT_DIR$/public/controllers/clientMyTicketsController.js" />
         <option value="$PROJECT_DIR$/public/less/mytickets.less" />
         <option value="$PROJECT_DIR$/public/mytickets.html" />
-        <option value="$PROJECT_DIR$/public/overzichttickets.html" />
         <option value="$PROJECT_DIR$/public/less/overzichttickets.less" />
         <option value="$PROJECT_DIR$/routes/Ticketroutes.js" />
         <option value="$PROJECT_DIR$/public/index.html" />
@@ -121,13 +85,15 @@
         <option value="$PROJECT_DIR$/app.js" />
         <option value="$PROJECT_DIR$/public/controllers/clientTicketController.js" />
         <option value="$PROJECT_DIR$/public/controllers/clientOneTicketController.js" />
-        <option value="$PROJECT_DIR$/appl/routes.js" />
-        <option value="$PROJECT_DIR$/public/less/mytraded.less" />
         <option value="$PROJECT_DIR$/public/less/ticket.less" />
         <option value="$PROJECT_DIR$/appl/models/ticket.js" />
         <option value="$PROJECT_DIR$/public/ticketregistreren.html" />
         <option value="$PROJECT_DIR$/appl/controllers/serverTicketController.js" />
         <option value="$PROJECT_DIR$/public/ticket.html" />
+        <option value="$PROJECT_DIR$/appl/routes.js" />
+        <option value="$PROJECT_DIR$/public/less/mytraded.less" />
+        <option value="$PROJECT_DIR$/public/mytraded.html" />
+        <option value="$PROJECT_DIR$/public/overzichttickets.html" />
       </list>
     </option>
   </component>
@@ -514,7 +480,13 @@
       <option name="project" value="LOCAL" />
       <updated>1451904837650</updated>
     </task>
-    <option name="localTasksCounter" value="14" />
+    <task id="LOCAL-00014" summary="description ingebouwd bij tickets">
+      <created>1451905389179</created>
+      <option name="number" value="00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1451905389179</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TodoView">
@@ -596,7 +568,8 @@
     <MESSAGE value="mytraded" />
     <MESSAGE value="ticket detail" />
     <MESSAGE value="ticket detail verder gewerkt" />
-    <option name="LAST_COMMIT_MESSAGE" value="ticket detail verder gewerkt" />
+    <MESSAGE value="description ingebouwd bij tickets" />
+    <option name="LAST_COMMIT_MESSAGE" value="description ingebouwd bij tickets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -810,13 +783,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/overzichttickets.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="156" column="0" selection-start-line="156" selection-start-column="0" selection-end-line="157" selection-end-column="71" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/mytickets.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -876,25 +842,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/clientMyTradedTicketsController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/appl/models/tradedticket.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/less/mytraded.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.8071834">
-          <caret line="106" column="0" selection-start-line="106" selection-start-column="0" selection-end-line="106" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -910,32 +861,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/mytraded.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-9.769231">
-          <caret line="64" column="22" selection-start-line="64" selection-start-column="22" selection-end-line="64" selection-end-column="22" />
-          <folding>
-            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/less/ticket.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-17.615385">
-          <caret line="120" column="15" selection-start-line="120" selection-start-column="15" selection-end-line="120" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-8.5">
-          <caret line="62" column="124" selection-start-line="62" selection-start-column="4" selection-end-line="62" selection-end-column="124" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -963,10 +888,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/less/ticket.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.38188976">
+          <caret line="107" column="0" selection-start-line="107" selection-start-column="0" selection-end-line="117" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/clientMyTradedTicketsController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/appl/routes.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.5149813">
-          <caret line="6" column="0" selection-start-line="6" selection-start-column="0" selection-end-line="6" selection-end-column="0" />
+        <state vertical-scroll-proportion="0.0">
+          <caret line="82" column="44" selection-start-line="82" selection-start-column="44" selection-end-line="82" selection-end-column="44" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="e#380#432#0" expanded="false" />
@@ -980,8 +921,8 @@
             <element signature="e#1265#1300#0" expanded="false" />
             <element signature="e#1346#1402#0" expanded="false" />
             <element signature="e#1467#1527#0" expanded="false" />
-            <element signature="e#2520#2761#0" expanded="false" />
-            <element signature="e#2826#3055#0" expanded="false" />
+            <element signature="e#2519#2760#0" expanded="false" />
+            <element signature="e#2825#3054#0" expanded="false" />
             <element signature="n#!!block;n#isLoggedIn#0" expanded="false" />
           </folding>
         </state>
@@ -990,7 +931,7 @@
     <entry file="file://$PROJECT_DIR$/appl/controllers/serverTicketController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
-          <caret line="13" column="46" selection-start-line="13" selection-start-column="46" selection-end-line="13" selection-end-column="46" />
+          <caret line="80" column="2" selection-start-line="80" selection-start-column="2" selection-end-line="80" selection-end-column="2" />
           <folding>
             <element signature="e#0#41#0" expanded="false" />
             <element signature="e#721#794#0" expanded="false" />
@@ -1002,8 +943,40 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/public/ticket.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.53346455">
-          <caret line="61" column="36" selection-start-line="61" selection-start-column="36" selection-end-line="61" selection-end-column="36" />
+        <state vertical-scroll-proportion="-10.423077">
+          <caret line="61" column="26" selection-start-line="61" selection-start-column="26" selection-end-line="61" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/less/mytraded.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="4.383858">
+          <caret line="131" column="16" selection-start-line="131" selection-start-column="16" selection-end-line="131" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/mytraded.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.93307084">
+          <caret line="45" column="22" selection-start-line="45" selection-start-column="22" selection-end-line="45" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.8031496">
+          <caret line="46" column="22" selection-start-line="26" selection-start-column="16" selection-end-line="46" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/overzichttickets.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.36220473">
+          <caret line="81" column="137" selection-start-line="81" selection-start-column="137" selection-end-line="81" selection-end-column="137" />
           <folding />
         </state>
       </provider>
