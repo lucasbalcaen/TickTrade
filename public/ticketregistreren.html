@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="app">
 <head>
     <meta charset="UTF-8">
     <title>Registreer uw ticket</title>
@@ -29,9 +29,9 @@
             <div></div>
         </div>
         <img id="logo" src="images/logo.png">
-        <div class="ui floating labeled icon dropdown button" id="rechterheader">
+        <div class="ui floating labeled icon dropdown button" id="rechterheader" ng-controller="userController">
             <i class="user icon"></i>
-            <span class="text">User</span>
+            <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
             <div class="menu">
                 <div class="item">
                     <i class="sign in icon"></i>
@@ -47,9 +47,11 @@
     <div class="zijmenu">
         <!-- Menu -->
         <ul>
-            <li><a href="index.html">Home</a></li>
-            <li><a href="werking.html">Werking</a></li>
-            <li><a href="#">Help</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/werking">Werking</a></li>
+            <li><a href="/overzichttickets">Browse Tickets</a></li>
+            <li><a href="/mytickets">My tickets</a></li>
+            <li><a href="/ticketregistreren">Add ticket</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
     </div>
@@ -131,5 +133,6 @@
     <script src="js/semanticinits.js"></script>
     <script src="./lib/angular/angular.js"></script>
     <script src="../lib/semantic-ui/semantic.min.js"></script>
+<script src="controllers/clientTicketController.js"></script>
 </body>
 </html>
