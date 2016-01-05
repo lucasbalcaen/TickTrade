@@ -87,6 +87,10 @@ module.exports = function(app, passport) {
         return ticketController.getMyTickets(req,res);
     });
 
+    app.get('/api/getmyverzoeken',function(req,res){
+        return ticketController.getVerzoeken(req,res);
+    });
+
     app.get('/api/mytraded',function(req,res){
         return ticketController.getMyTraded(req,res);
     });
@@ -115,7 +119,7 @@ module.exports = function(app, passport) {
         return ticketController.create(req,res);
     });
 
-    app.post('/overzichttickets',function(req,res){
+    app.post('/notificatietoevoegen',function(req,res){
         return ticketController.createVerzoek(req,res);
     });
 

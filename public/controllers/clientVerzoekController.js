@@ -12,7 +12,7 @@
 
         var arrayVerzoeken=[];
         var arrayTickets=[];
-        $http.get("/api/getMyVerzoeken").then(function(result){
+        $http.get("/api/getmyverzoeken").then(function(result){
              var verzoeken =result.data;
 
 
