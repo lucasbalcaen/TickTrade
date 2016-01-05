@@ -4,7 +4,7 @@
 (function (oneticket) {
     "use strict";
 
-    console.log("yeeps");
+
 
     oneticket.controller('oneTicketController', ['$scope', '$http', '$routeParams', function($scope, $http,$routeParams) {
 
@@ -64,6 +64,17 @@
             }
 
         })
+    }]);
+
+
+    oneticket.controller('myTicketsController', ['$scope', '$http', function($scope, $http) {
+        $http.get("/api/mytickets").then(function (result) {
+            $scope.mytickets = result.data;
+
+        });
+
+
+
     }]);
 
 

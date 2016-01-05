@@ -11,7 +11,9 @@
     <title></title>
 </head>
 <body>
-<header>
+
+<section id="geblurd">
+    <header>
     <div id="bovenbar">
         <div class="hamburger">
             <div></div>
@@ -68,7 +70,7 @@
             </div>
 
     </div>
-        <button class="ui inverted orange button" id="getstartedbtn">Trade<i class="right arrow icon"></i></button>
+        <button class="ui orange button" id="getstartedbtn" onclick="blurscherm()">Trade<i class="right arrow icon"></i></button>
     </div>
 
 
@@ -78,7 +80,42 @@
 <div id="map" style="height:500px; width:100%">
 
 </div>
+</section>
 
+<section id="nonblur">
+    <div id="popup" class="popup unvisible" ng-controller="myTicketsController">
+
+        <h3 class="header oranje">Selecteer een of meerdere tickets</h3>
+
+        <div id="myticketcontainer">
+            <div ng-repeat="ticketje in mytickets" id="{{ ticketje._id }}" onclick="selecteren(this)">
+                <div class="ui card" id="mijnTicket">
+                    <div class="content">
+
+                        <div class="header">
+                            {{ ticketje.title }}
+                        </div>
+                        <div class="content">
+                            {{ ticketje.sort }}
+                            <span id="myspanprijs" class="right floated"><i class="euro icon"></i>  {{ ticketje.price }} </span>
+                            <span id="myspanticket" class="right floated"><i class="ticket icon"></i>  {{ ticketje.amount }} </span>
+                        </div>
+
+
+
+                    </div>
+            </div>
+            </div>
+            </div>
+        <form id="formpje"  method="post" action="/overzichttickets" >
+        <input type="hidden" name="formAanbiederId" id="formAanbiederId" ng-controller="oneTicketController"  value="{{ ticketje.user }}">
+        <input type="hidden" name="formAangebodenId" id="formAangebodenId">
+        <input type="hidden" name="formGeselecteerdId" id="formGeselecteerdId">
+
+        <button class="ui orange button" id="btnTrade">Trade<i class="right arrow icon"></i></button>
+        </form>
+    </div>
+</section>
 
 
 
@@ -87,6 +124,7 @@
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCvO-U5oFfCuHIpssuoHkixKpoIalS-cdI&callback=initMap">
 </script>
+<script src="../js/ruilKiezer.js"></script>
 <script src="../js/navnavigatie.js"></script>
 <script src="../js/semanticinits.js"></script>
 <script src="../lib/semantic-ui/semantic.min.js"></script>

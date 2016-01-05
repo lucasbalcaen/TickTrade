@@ -81,7 +81,18 @@ header {
   width: 50%;
   margin-left: auto;
   margin-right: auto;
-  margin-top: 20px;
+  margin-top: 50px;
+}
+#mijnTicket {
+  width: 100%;
+  height: 35%;
+  margin-top: 10px;
+  display: block;
+  min-width: 249px ;
+}
+#myticketcontainer {
+  margin-left: auto;
+  margin-right: auto;
 }
 #spanticket {
   padding-right: 10px;
@@ -93,5 +104,40 @@ header {
   margin-top: 10px;
 }
 #map {
+  margin-top: 50px;
+}
+.blurred {
+  -webkit-filter: blur(5px);
+  -moz-filter: blur(5px);
+  -o-filter: blur(5px);
+  -ms-filter: blur(5px);
+  filter: blur(5px);
+  pointer-events: none;
+}
+.popup {
+  position: absolute;
+  display: block;
+  left: 0;
+  right: 0;
+  top: 200px;
+  width: 400px;
+  margin: auto;
+  background-color: #f4f4f4;
+  padding: 20px 10px 20px 10px;
+}
+.unvisible {
+  visibility: hidden;
+}
+.visible {
+  visibility: visible;
+}
+.oranje {
+  color: #f89406;
+}
+#btnTrade {
   margin-top: 20px;
+  width: 100%;
+}
+.selected {
+  color: #f89406;
 }

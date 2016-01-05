@@ -3,6 +3,7 @@
  */
 var Ticket = require('../models/ticket.js');
 var TradedTicket = require('../models/tradedticket.js');
+var ruilverzoek = require('../models/ruilverzoek.js');
 exports.create = function(req,res)
 {
 
@@ -26,6 +27,17 @@ exports.create = function(req,res)
 
 
 
+};
+
+exports.createVerzoek = function(req,res){
+        var entry = new ruilverzoek({
+            ticketId:req.body.formGeselecteerdId ,
+            aangebodenId: req.body.formAangebodenId ,
+            userIdAanbieder:req.body.formAanbiederId,
+            bekeken: false
+        });
+    entry.save();
+    res.redirect('index.html');
 };
 
 exports.getTickets = function(req,res){
@@ -61,7 +73,7 @@ exports.getMyTickets = function(req,res){
 
 exports.getOneTicket = function(req,res){
 
-    res.send(req.toString());
+    res.json(req);
 
   /*  var user = req.user._id;
 
@@ -101,4 +113,11 @@ exports.createTraded = function (req, res) {
 
 };
 
+exports.getVerzoeken = function(req,res){
+    var user = req.user._id;
+    var query = ruilverzoek.find({"userIdAanbieder":user.toString()});
+    query.exec(function(err,results){
+        res.json(results);
+    });
 
+}

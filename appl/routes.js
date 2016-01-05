@@ -46,6 +46,10 @@ module.exports = function(app, passport) {
         res.sendfile('./public/mytickets.html');
     });
 
+    app.get('/notificaties',function(req,res){
+        res.sendfile('./public/notificaties.html');
+    });
+
     app.get('/profile', isLoggedIn, function(req, res) {
         res.json(req.user);
     });
@@ -89,6 +93,10 @@ module.exports = function(app, passport) {
         return req.toString();
     });
 
+    app.get('/api/getMyVerzoeken',function(req,res){
+        return ticketController.getVerzoeken(req,res);
+    });
+
     // alle posts in de nav *******************************************************************
 
     app.post('/signup', passport.authenticate('local-signup', {
@@ -105,6 +113,10 @@ module.exports = function(app, passport) {
 
     app.post('/ticketregistreren',function(req,res){
         return ticketController.create(req,res);
+    });
+
+    app.post('/overzichttickets',function(req,res){
+        return ticketController.createVerzoek(req,res);
     });
 
 
