@@ -189,9 +189,22 @@
         var ticketOwner = msg[1];
         var ticketAmount = msg[2];
         console.log("kom erin");
-        $("#feedje").append("<div class='ui feed'><div class='event'><div class='label' id='ticketlabel'><i class='ticket icon'></i></div><div class='content'><div class='summary' id='feedinfo'>"+ticketOwner +" posted "+ticketAmount+" ticket(s): "+ticketTitle+"</div></div></div></div>");
+        $("#feedje").append("<div class='ui feed' id='feedui'><div class='event'><div class='label' id='ticketlabel'><i class='ticket icon'></i></div><div class='content'><div class='summary' id='feedinfo'>"+ticketOwner +" posted "+ticketAmount+" ticket(s): "+ticketTitle+"</div></div></div></div>");
 
      });
+
+    setInterval(function(){
+        if($('#feedje').children().length > 0)
+        {
+            setInterval(function(){
+                var child = $('#feedje').children().first();
+                child.remove();
+
+            }, 15000);
+        }
+    },1000);
+
+
 
 </script>
 </body>
