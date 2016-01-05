@@ -115,6 +115,10 @@ module.exports = function(app, passport) {
         return ticketController.create(req,res);
     });
 
+    app.post('/overzichttickets',function(req,res){
+        return ticketController.createVerzoek(req,res);
+    });
+
 
 };
 
