@@ -23,11 +23,24 @@
             <i class="user icon"></i>
             <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
             <div class="menu">
-                <div class="item">
+                <div class="item" ng-show="loggedIn">
+                    <i class="ticket icon"></i>
+                    <a href="/mytickets">My Tickets</a>
+                </div>
+                <div class="item" ng-show="loggedIn">
+                    <i class="exchange icon"></i>
+                    <a href="/mytraded">My Trades</a>
+                </div>
+                <div class="item" ng-show="loggedIn">
+                    <i class="sign out icon"></i>
+                    <a href="/logout">Sign Out</a>
+                </div>
+
+                <div class="item" ng-hide="loggedIn">
                     <i class="sign in icon"></i>
                     <a href="/login">Sign In</a>
                 </div>
-                <div class="item">
+                <div class="item" ng-hide="loggedIn">
                     <i class="add user icon"></i>
                     <a href="/signup">Register</a>
                 </div>
@@ -36,7 +49,7 @@
     </div>
     <div class="zijmenu">
         <!-- Menu -->
-        <>
+        <ul>
 
                 <li><a href="/">Home</a></li>
                 <li><a href="/werking">Werking</a></li>

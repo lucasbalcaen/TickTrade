@@ -29,7 +29,7 @@
                 </div>
                 <div class="item" ng-show="loggedIn">
                     <i class="exchange icon"></i>
-                    <a href="/logout">My Trades</a>
+                    <a href="/mytraded">My Trades</a>
                 </div>
                 <div class="item" ng-show="loggedIn">
                     <i class="sign out icon"></i>
@@ -133,6 +133,9 @@
                 </div>
             </div>
         </div>
+        <div  id="feedje">
+
+        </div>
     </div>
     <div class="grootvak">
         <div>
@@ -168,9 +171,41 @@
 <script src="js/navnavigatie.js"></script>
 <script src="js/semanticinits.js"></script>
 <script src="../lib/semantic-ui/semantic.min.js"></script>
-
 <script src="./lib/angular/angular.js"></script>
 <script src="controllers/clientOverzichtTicketsController.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect();
+    socket.on("connect",function(){
+        console.log("connected");
+    });
 
+    socket.on("disconnect",function(){
+        console.log("disconnected");
+    });
+
+    socket.on("alletickets",function(msg){
+        var ticketTitle = msg[0];
+        var ticketOwner = msg[1];
+        var ticketAmount = msg[2];
+        console.log("kom erin");
+        $("#feedje").append("<div class='ui feed' id='feedui'><div class='event'><div class='label' id='ticketlabel'><i class='ticket icon'></i></div><div class='content'><div class='summary' id='feedinfo'>"+ticketOwner +" posted "+ticketAmount+" ticket(s): "+ticketTitle+"</div></div></div></div>");
+
+     });
+
+    setInterval(function(){
+        if($('#feedje').children().length > 0)
+        {
+            setInterval(function(){
+                var child = $('#feedje').children().first();
+                child.remove();
+
+            }, 15000);
+        }
+    },1000);
+
+
+
+</script>
 </body>
 </html>
