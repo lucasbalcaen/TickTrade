@@ -46,6 +46,10 @@ module.exports = function(app, passport) {
         res.sendfile('./public/mytickets.html');
     });
 
+    app.get('/mytraded',function(req,res){
+        res.sendfile('./public/mytraded.html');
+    });
+
     app.get('/profile', isLoggedIn, function(req, res) {
         res.json(req.user);
     });
