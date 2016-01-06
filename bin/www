@@ -37,6 +37,16 @@ function handleIO(socket){
   socket.on("nieuwticketje",function(msg){
     io.emit("alletickets",msg);
   });
+
+  socket.on("traderequest",function(msg){
+    var ticketSellerID = msg[0];
+    var ticketEigenID = msg[1];
+    var ticketEigenNaam = msg[2];
+
+    console.log("ticketSellerID "+ticketSellerID);
+    console.log("ticketEigenID "+ticketEigenID);
+    console.log("ticketEigeNaam "+ticketEigenNaam);
+  });
 }
 
 /**

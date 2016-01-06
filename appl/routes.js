@@ -4,7 +4,7 @@
 // app/routes.js
 var ticketController = require('./controllers/serverTicketController.js');
 var userController = require('./controllers/serverUserController.js');
-
+var ingelogdeUserController = require('./controllers/ingelogdeUserController.js');
 
 module.exports = function(app, passport) {
 
@@ -59,8 +59,10 @@ module.exports = function(app, passport) {
     });
 
     app.get('/logout', function(req, res) {
+        var userID = req.user.id;
         req.logout();
         res.redirect('/');
+        return ingelogdeUserController.delete(req,res,userID);
     });
 
     app.get('/ticketregistreren',isLoggedIn,function(req,res){
@@ -72,7 +74,9 @@ module.exports = function(app, passport) {
 
     app.get('/api/getuser', function(req,res){
         res.json(req.user);
-        // return userController.getUser(req,res);
+        console.log("de user zijn id" + req.user.id);
+        var userID = req.user.id;
+        return ingelogdeUserController.create(req,res,userID);
     });
 
     app.get('/api/tickets',function(req,res){
@@ -131,6 +135,7 @@ function isLoggedIn(req, res, next) {
 
     if (req.isAuthenticated())
         return next();
+
 
     // niet ingelogd, naar loginpagina
     res.redirect('/login');
