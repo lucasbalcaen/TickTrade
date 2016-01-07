@@ -68,14 +68,17 @@
     <div ng-repeat="verzoek in verzoeken" class="verzoek">
         <div class="content">
 
-                        <h5>{{verzoek[0].title}}</h5>
+            <input type="hidden" value="verzoek[1].user" id="userIdJezelf">
+            <input type="hidden" value="verzoek[2].user" id="userIdAnder">
+
+                        <h5>{{verzoek[1].title}}</h5>
                         <img src="images/arrow486.png">
                     <div id="geselecteerd">
-                        <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 0">{{geselecteerd.title}}</p>
+                        <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">{{geselecteerd.title}}</p>
                     </div>
                 <div id="buttons">
-                    <button class="ui grey button" id="acceptbtn" onclick=""><i class="checkmark icon"></i></button>
-                    <button class="ui grey button" id="declinebtn" onclick=""><i class="remove icon"></i></button>
+                    <button class="ui grey button" id="acceptbtn" ng-click="accept(verzoek[0],verzoek[2].user)"><i class="checkmark icon"></i></button>
+                    <button class="ui grey button" id="declinebtn" ng-click="decline(verzoek[0])"><i class="remove icon"></i></button>
                 </div>
         </div>
 

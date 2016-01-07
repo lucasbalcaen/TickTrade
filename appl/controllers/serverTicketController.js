@@ -119,5 +119,47 @@ exports.getVerzoeken = function(req,res){
     query.exec(function(err,results){
         res.json(results);
     });
+};
 
-}
+exports.getTicketById= function(req,res,ids){
+
+    var arrayTickets = [];
+
+    for (var i=0; i<ids.length;i++){
+       var id = ids[i];
+        var query = Ticket.find({"userIdAanbieder":id});
+        query.exec(function(err,results){
+           arrayTickets.push(results);
+        });
+    }
+
+    res.json(arrayTickets);
+
+};
+
+
+// deleten ******************************************************
+
+exports.deleteVerzoek= function(req,res){
+   var id = req.params.idverzoek;
+    var query = ruilverzoek.remove({"_id":id});
+    query.exec(function(err,results){
+        res.send("deleted");
+    });
+
+};
+
+// updaten ********************************************************
+
+exports.accNotificatie= function(req,res){
+    var id = req.params.idnotificatie;
+    var query = {'_id':id};
+    //return res.send("succesfully saved");
+
+    ruilverzoek.update(query, { $set: { bekeken: true }}, {multi:true}, function(err, doc){
+        if (err) return res.send(500, { error: err });
+        return res.send("succesfully saved");
+    });
+};
+
+

@@ -37,20 +37,20 @@ module.exports = function(app, passport) {
         res.sendfile('./public/overzichttickets.html');
     });
 
-    app.get('/overzichttickets/:id',function(req,res){
+    app.get('/overzichttickets/:id',isLoggedIn,function(req,res){
 
         res.sendfile('./public/ticket.html');
     });
 
-    app.get('/mytickets',function(req,res){
+    app.get('/mytickets',isLoggedIn,function(req,res){
         res.sendfile('./public/mytickets.html');
     });
 
-    app.get('/mytraded',function(req,res){
+    app.get('/mytraded',isLoggedIn,function(req,res){
         res.sendfile('./public/mytraded.html');
     });
 
-    app.get('/notificaties',function(req,res){
+    app.get('/notificaties',isLoggedIn,function(req,res){
         res.sendfile('./public/notificaties.html');
     });
 
@@ -69,10 +69,14 @@ module.exports = function(app, passport) {
         return ticketController.getTickets(req,res);
     });
 
+    app.get('/onderhandelen/:idverzoek/:iduser',function(req,res){
+        res.sendfile('./public/onderhandelen.html');
+    });
+
 
     // alle api calls ********************************************************************
 
-    app.get('/api/getuser', function(req,res){
+    app.get('/api/getuser',isLoggedIn, function(req,res){
         res.json(req.user);
         console.log("de user zijn id" + req.user.id);
         var userID = req.user.id;
@@ -105,6 +109,18 @@ module.exports = function(app, passport) {
         return req.toString();
     });
 
+    app.get('/api/ticketViaId',function(req,res){
+        var url = require('url');
+        var url_parts = url.parse(request.url, true);
+        var ids = url_parts.query;
+       //return ticketController.getTicketById(req,res,ids);
+        return ids;
+    });
+
+    app.get('/api/accnotificaties/:idnotificatie',function(req,res){
+        return ticketController.accNotificatie(req,res);
+    })
+
     // alle posts in de nav *******************************************************************
 
     app.post('/signup', passport.authenticate('local-signup', {
@@ -127,8 +143,20 @@ module.exports = function(app, passport) {
         return ticketController.createVerzoek(req,res);
     });
 
+// alle api deletes ***********************************************************************
 
-};
+    app.get('/notificaties/:idverzoek',function(req,res){
+        return ticketController.deleteVerzoek(req,res)
+    });
+
+
+
+}
+
+
+
+
+
 
 // kijken of de gebruiker ingelogd is *****************************************************
 function isLoggedIn(req, res, next) {

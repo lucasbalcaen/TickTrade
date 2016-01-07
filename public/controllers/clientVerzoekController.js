@@ -12,45 +12,54 @@
 
         var arrayVerzoeken=[];
         var arrayTickets=[];
+        var arrayId=[];
         $http.get("/api/getmyverzoeken").then(function(result){
              var verzoeken =result.data;
+            /*for (var i=0;i<verzoeken.length;i++){
+                 var aangeboden = verzoeken[i].aangebodenId;
+                 //var arrtickets = verzoeken[i].ticketId;
+                 arrayTickets.push(aangeboden);
+                 //arrayTickets.push(arrtickets);
+                 $http({
+                     url:"/api/ticketViaId",
+                     method:"GET",
+                     params:{ids:verzoeken[i].aangebodenId}
+                 }).then(function(result){
+                     arrayVerzoeken.push(result);
+                     arrayTickets=[];
+                 });
+             }
+            $scope.verzoeken = arrayVerzoeken;
+            arrayVerzoeken=[];
+            */
 
 
                 $http.get("/api/overzichttickets").then(function (result2) {
                     var obj = result2.data;
-
-
                     for (var q=0;q<verzoeken.length;q++) {
                         var aangeboden = verzoeken[q].aangebodenId;
                         var arrtickets = verzoeken[q].ticketId;
+
                         var stukken = arrtickets.split(",");
 
-
                     for (var i = 0; i < obj.length; i++){
-
                         if (obj[i]._id == aangeboden) {
-
+                            arrayTickets.push(verzoeken[q]._id);
                            arrayTickets.push(obj[i]);
                         }
                     }
 
                     for (var y =0; y<stukken.length;y++) {
-
                         for (var d = 0; d < obj.length; d++) {
-
-
                             if (obj[d]._id == stukken[y]) {
-
                                 arrayTickets.push(obj[d]);
-
                             }
                         }
                     }
                         arrayVerzoeken.push(arrayTickets);
                         arrayTickets=[];
-
-
                         $scope.verzoeken = arrayVerzoeken;
+                        $scope.ids = arrayId;
                     }
                 });
 
@@ -58,7 +67,20 @@
 
         });
 
+        $scope.accept = function(id,iduser) {
 
+            $http.get("/api/accnotificaties/"+id).then(function(result){
+                window.location.href='/onderhandelen/'+id+'/'+iduser;
+            });
+
+
+        }
+
+        $scope.decline = function(id) {
+            $http.get("/notificaties/"+id).then(function(result){
+                location.reload();
+            });
+        }
     }]);
 
 
