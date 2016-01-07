@@ -7,6 +7,7 @@
 var app = require('../app');
 var debug = require('debug')('TickTrade:server');
 var http = require('http');
+var ingelogdeUserController = require('../appl/controllers/ingelogdeUserController.js');
 
 
 /**
@@ -46,6 +47,22 @@ function handleIO(socket){
     console.log("ticketSellerID "+ticketSellerID);
     console.log("ticketEigenID "+ticketEigenID);
     console.log("ticketEigeNaam "+ticketEigenNaam);
+
+    var check = ingelogdeUserController.zoekonoff(ticketSellerID);
+    check.then(function(data){
+      //var check2 = data._doc.userID;
+      if(data == null){
+        console.log("hij is er niet");
+      }
+      else{
+        var check2 = data._doc.userID;
+        console.log(check2);
+        var msg = [ticketEigenNaam,ticketSellerID];
+        io.emit("testtraderequest",msg);
+      }
+    });
+
+
   });
 }
 

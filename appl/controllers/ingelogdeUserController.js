@@ -22,3 +22,15 @@ exports.delete = function(req,res,userID){
 
     });
 };
+
+exports.zoekonoff = function(userID){
+
+    var condition = { userID: userID};
+
+    var query = IngelogdUser.findOne(condition);
+
+    return query.exec(function(err,result){
+       return result;
+    });
+
+};

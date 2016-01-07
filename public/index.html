@@ -23,6 +23,7 @@
         <div class="ui floating labeled icon dropdown button" id="rechterheader" ng-controller="userController">
             <i class="user icon"></i>
             <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
+            <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
             <div class="menu">
                 <div class="item" ng-show="loggedIn">
                     <i class="ticket icon"></i>
@@ -99,6 +100,33 @@
 <script src="./lib/angular/angular-cookies.js"></script>
 <script src="../lib/semantic-ui/semantic.min.js"></script>
 <script src="controllers/clientTicketController.js"></script>
+<script src="/socket.io/socket.io.js"></script>
+<script>
+    var socket = io.connect();
+    socket.on("connect",function(){
+        console.log("connected");
+    });
 
+    socket.on("disconnect",function(){
+        console.log("disconnected");
+    });
+
+    socket.on("testtraderequest",function(msg){
+        var ticketEigenNaam = msg[0];
+        var ticketSellerID = msg[1];
+        var hiddenUserId = document.getElementById("hiddenuserid").value;
+        if(hiddenUserId == ticketSellerID)
+        {
+            console.log("ze zijn gelijk");
+        }
+        else{
+            console.log("blabla");
+        }
+
+        $('body').append("<div class='ui cards' id='notdiv'><div class='card'> <div class='content'><div class='header'><i class='user icon'></i>"+ticketEigenNaam+"</div><div class='description'>"+ticketEigenNaam+" requested to trade a ticket with you</div></div> <div class='extra content'><div class='ui two buttons'><div class='ui basic green button'>Approve</div>< <div class='ui basic red button'>Decline</div>/div></div></div></div>");
+
+    });
+
+</script>
 </body>
 </html>
