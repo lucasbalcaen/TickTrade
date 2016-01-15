@@ -70,7 +70,7 @@
         $scope.accept = function(id,iduser) {
 
             $http.get("/api/accnotificaties/"+id).then(function(result){
-                window.location.href='/onderhandelen/'+id+'/'+iduser;
+                window.location.href='/onderhandelen/'+id;
             });
 
 

@@ -69,7 +69,7 @@ module.exports = function(app, passport) {
         return ticketController.getTickets(req,res);
     });
 
-    app.get('/onderhandelen/:idverzoek/:iduser',function(req,res){
+    app.get('/onderhandelen/:idverzoek',function(req,res){
         res.sendfile('./public/onderhandelen.html');
     });
 
@@ -110,11 +110,15 @@ module.exports = function(app, passport) {
     });
 
     app.get('/api/ticketViaId',function(req,res){
-        var url = require('url');
-        var url_parts = url.parse(request.url, true);
-        var ids = url_parts.query;
-       //return ticketController.getTicketById(req,res,ids);
-        return ids;
+
+       return ticketController.getTicketById(req,res);
+
+    });
+
+    app.get('/api/verzoekViaId',function(req,res){
+
+
+        return ticketController.getVerzoekById(req,res);
     });
 
     app.get('/api/accnotificaties/:idnotificatie',function(req,res){

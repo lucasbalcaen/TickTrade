@@ -121,19 +121,28 @@ exports.getVerzoeken = function(req,res){
     });
 };
 
-exports.getTicketById= function(req,res,ids){
+exports.getTicketById= function(req,res){
 
-    var arrayTickets = [];
+    var ids = req.query.ids;
 
-    for (var i=0; i<ids.length;i++){
-       var id = ids[i];
-        var query = Ticket.find({"userIdAanbieder":id});
-        query.exec(function(err,results){
-           arrayTickets.push(results);
-        });
-    }
+    var query = Ticket.findOne({_id:ids});
+    query.exec(function(err,obj) {
+        res.json(obj);
+    });
 
-    res.json(arrayTickets);
+};
+
+
+exports.getVerzoekById=function(req,res){
+
+    var ids = req.query.ids;
+
+    var query = ruilverzoek.findOne({_id:ids});
+    query.exec(function(err,obj) {
+        res.json(obj);
+    });
+
+
 
 };
 
