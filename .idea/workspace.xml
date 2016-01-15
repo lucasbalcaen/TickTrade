@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2aa9c3c-cdc4-4ac7-a73b-2fce7e043951" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/controllers/clientOnderhandelController.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/less/onderhandelen.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/clientVerzoekController.js" afterPath="$PROJECT_DIR$/public/controllers/clientVerzoekController.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/clientOnderhandelController.js" afterPath="$PROJECT_DIR$/public/controllers/clientOnderhandelController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/onderhandelen.html" afterPath="$PROJECT_DIR$/public/onderhandelen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appl/routes.js" afterPath="$PROJECT_DIR$/appl/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appl/controllers/serverTicketController.js" afterPath="$PROJECT_DIR$/appl/controllers/serverTicketController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TickTrade.iws" />
@@ -36,8 +32,8 @@
       <file leaf-file-name="onderhandelen.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/public/onderhandelen.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.2527881" vertical-offset="0" max-vertical-offset="1632">
-              <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+            <state vertical-scroll-proportion="0.5260223" vertical-offset="975" max-vertical-offset="1632">
+              <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -96,8 +92,8 @@
       <file leaf-file-name="notificaties.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/notificaties.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-51.0" vertical-offset="0" max-vertical-offset="2193">
-              <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
+            <state vertical-scroll-proportion="-7.1923075" vertical-offset="1071" max-vertical-offset="2193">
+              <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="67" />
               <folding />
             </state>
           </provider>
@@ -106,7 +102,7 @@
       <file leaf-file-name="ticket.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/ticket.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="2635">
+            <state vertical-scroll-proportion="76.07692" vertical-offset="2097" max-vertical-offset="2635">
               <caret line="7" column="61" selection-start-line="4" selection-start-column="4" selection-end-line="7" selection-end-column="61" />
               <folding />
             </state>
@@ -126,8 +122,8 @@
       <file leaf-file-name="clientOnderhandelController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/public/controllers/clientOnderhandelController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1377">
-              <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
+            <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1377">
+              <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -195,8 +191,9 @@
         <option value="$PROJECT_DIR$/public/controllers/clientVerzoekController.js" />
         <option value="$PROJECT_DIR$/appl/controllers/serverTicketController.js" />
         <option value="$PROJECT_DIR$/appl/routes.js" />
-        <option value="$PROJECT_DIR$/public/controllers/clientOnderhandelController.js" />
         <option value="$PROJECT_DIR$/public/less/onderhandelen.less" />
+        <option value="$PROJECT_DIR$/public/controllers/clientOnderhandelController.js" />
+        <option value="$PROJECT_DIR$/public/notificaties.html" />
         <option value="$PROJECT_DIR$/public/onderhandelen.html" />
       </list>
     </option>
@@ -554,7 +551,13 @@
       <option name="project" value="LOCAL" />
       <updated>1452083807892</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="onderhandelen alles staat klaar">
+      <created>1452853936524</created>
+      <option name="number" value="00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1452853936524</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TodoView">
@@ -570,6 +573,7 @@
     <frame x="-8" y="-8" width="1616" height="886" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2148541" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33288044" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -587,7 +591,6 @@
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252688" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="SLIDING" type="SLIDING" visible="false" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
@@ -642,7 +645,8 @@
     <MESSAGE value="description ingebouwd bij tickets" />
     <MESSAGE value="kleine dingen" />
     <MESSAGE value="ingelogde users in DB en deruit bij uitloggen + socketdings" />
-    <option name="LAST_COMMIT_MESSAGE" value="ingelogde users in DB en deruit bij uitloggen + socketdings" />
+    <MESSAGE value="onderhandelen alles staat klaar" />
+    <option name="LAST_COMMIT_MESSAGE" value="onderhandelen alles staat klaar" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -983,22 +987,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/controllers/clientOnderhandelController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0" vertical-offset="391" max-vertical-offset="1377">
-          <caret line="34" column="0" selection-start-line="34" selection-start-column="0" selection-end-line="34" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/notificaties.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-51.0" vertical-offset="0" max-vertical-offset="2193">
-          <caret line="78" column="34" selection-start-line="78" selection-start-column="34" selection-end-line="78" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/less/notificaties.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-2.6153846" vertical-offset="0" max-vertical-offset="2737">
@@ -1015,18 +1003,34 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/public/controllers/clientOnderhandelController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="408" max-vertical-offset="1377">
+          <caret line="37" column="0" selection-start-line="37" selection-start-column="0" selection-end-line="37" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/public/ticket.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-4.576923" vertical-offset="0" max-vertical-offset="2635">
+        <state vertical-scroll-proportion="76.07692" vertical-offset="2097" max-vertical-offset="2635">
           <caret line="7" column="61" selection-start-line="4" selection-start-column="4" selection-end-line="7" selection-end-column="61" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/notificaties.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-7.1923075" vertical-offset="1071" max-vertical-offset="2193">
+          <caret line="74" column="62" selection-start-line="74" selection-start-column="62" selection-end-line="74" selection-end-column="67" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/public/onderhandelen.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2527881" vertical-offset="0" max-vertical-offset="1632">
-          <caret line="8" column="4" selection-start-line="8" selection-start-column="4" selection-end-line="8" selection-end-column="4" />
+        <state vertical-scroll-proportion="0.5260223" vertical-offset="975" max-vertical-offset="1632">
+          <caret line="74" column="0" selection-start-line="74" selection-start-column="0" selection-end-line="74" selection-end-column="0" />
           <folding />
         </state>
       </provider>
