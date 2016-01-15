@@ -22,6 +22,7 @@
             <i class="user icon"></i>
             <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
             <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
+            <input type="hidden" value="{{ currentUser.local.voornaam}}" id="currentUserVoornaam">
             <div class="menu">
                 <div class="item" ng-show="loggedIn">
                     <i class="ticket icon"></i>
@@ -63,20 +64,10 @@
 
 <h1>onderhandelen</h1>
 
-
-<div ng-controller="verzoekController"  >
-
-
-
-    <input type="hidden" value="tickets[0].user" id="userIdJezelf">
-    <input type="hidden" value="tickets[1].user" id="userIdAnder">
-    <input type="hidden" value="tickets[1].owner" id="naamAnder">
-
-
+<div ng-controller="verzoekController">
+    <input type="text" value="{{ tickets[0].user }}" id="userIdJezelf">
+    <input type="text" value="{{ tickets[1].user }}" id="userIdAnder">
 </div>
-
-
-
 
    <script src="../js/navnavigatie.js"></script>
    <script src="../js/semanticinits.js"></script>
@@ -87,5 +78,46 @@
    <script src="/socket.io/socket.io.js"></script>
    <script src="js/overzichtticketssocket.js"></script>
    <script src="js/notificatieRequestSocket.js"></script>
+<script>
+
+    window.onload = function () {
+        var socket = io.connect();
+        socket.on("connect",function(){
+            console.log("connected");
+        });
+
+        socket.on("disconnect",function(){
+            console.log("disconnected");
+        });
+
+        setTimeout(
+                function()
+                {
+                    var userIdJezelf = document.getElementById("userIdJezelf").value;
+                    var userIdAnder = document.getElementById("userIdAnder").value;
+                    var naamAnder = document.getElementById("currentUserVoornaam").value;
+                    var eigenID = document.getElementById("hiddenuserid").value;
+                    var echteID;
+                    console.log("userIdJezelf "+userIdJezelf);
+                    console.log("userIdAnder "+userIdAnder);
+                    console.log("naamAnder "+naamAnder);
+                    var ids = [userIdJezelf,userIdAnder];
+                    for(var i = 0; i < ids.length; i++){
+                        if(ids[i] == eigenID){
+
+                        }else{
+                            echteID = ids[i];
+                        }
+                    }
+                    var msg = [eigenID,echteID,naamAnder];
+                    if(msg){
+                        socket.emit("tradenotaccept",msg);
+                        console.log("de shit is verstuurd");
+                    }
+                }, 2000);
+
+    }
+
+</script>
 </body>
 </html>

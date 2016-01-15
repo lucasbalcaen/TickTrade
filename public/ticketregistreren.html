@@ -84,7 +84,7 @@
             <div class="ui segment">
                 <form method="post" action="/ticketregistreren" id="ticketRegisterForm">
                     <div class="ui labeled input formdiv">
-                        <div class="ui label oranjelabel" id="labelkleur">
+                        <div class="ui label oranjelabel labelkleur" >
                             Ticket:
                         </div>
                         <input type="text" id="formTicketTitle" name="formTicketTitle" placeholder="Titel van het ticket">
@@ -104,38 +104,40 @@
                             <div class="item" data-value="Expo">Expo</div>
                         </div>
                     </div>
-                    <div class="ui labeled input formdiv">
+                    <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Omschrijving:
                         </div>
                         <input type="text" id="formTicketDescription" name="formTicketDescription" placeholder="Omschrijving van het evenement">
                     </div>
-                    <div class="ui labeled input formdiv">
+                    <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Prijs (€):
                         </div>
                         <input type="text" id="formTicketPrice" name="formTicketPrice" placeholder="Prijs per ticket"/>
                     </div>
-                    <div class="ui labeled input formdiv">
+                    <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Aantal:
                         </div>
                         <input type="number" id="formTicketAmount" name="formTicketAmount" placeholder="Aantal tickets"/>
                     </div>
-                    <div class="ui labeled input formdiv">
+                    <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Datum:
                         </div>
                         <input type="date" id="formDatum" name="formDatum" placeholder="Datum evenement"/><br />
                     </div>
 
-                    <div class="ui labeled input formdiv">
+                    <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Stad:
                         </div>
                         <input type="text" id="formCity" name="formCity" placeholder="Stad evenement"/><br />
                     </div>
+                    <div class="ui labeled input formdiv labelkleur">
                     <button class="ui inverted orange button" id="btnSaveTicket" name="btnSaveTicket">Registreer uw ticket<i class="right arrow icon"></i></button>
+                    </div>
                 </form>
             </div>
 
@@ -149,5 +151,6 @@
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/ticketregistrerensocket.js"></script>
 <script src="js/notificatieRequestSocket.js"></script>
+<script src="js/sockettradeaccepted.js"></script>
 </body>
 </html>

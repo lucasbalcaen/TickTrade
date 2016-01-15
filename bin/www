@@ -63,13 +63,16 @@ function handleIO(socket){
   });
 
   socket.on("tradenotaccept",function(msg){
-    var userIdJezelf = msg[0];
-    var userIdAnder = msg[1];
-    var naamAnder = msg[2];
+    var userIdVanWie = msg[0];
+    var userIdNaarWie = msg[1];
+    var naamVanWie = msg[2];
 
-    console.log("userIdJezelf "+userIdJezelf);
-    console.log("userIdAnder "+userIdAnder);
-    console.log("naamAnder "+naamAnder);
+    console.log("userIdVanWie "+userIdVanWie);
+    console.log("userIdNaarWie "+userIdNaarWie);
+    console.log("naamVanWie "+naamVanWie);
+    var msg = [userIdVanWie,userIdNaarWie,naamVanWie];
+    io.emit("tradeaccepted",msg);
+
   });
 
 }

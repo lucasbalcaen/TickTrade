@@ -140,6 +140,12 @@ td {
   border-left: 2px solid #EAEDF2;
   border-bottom: 2px solid #EAEDF2;
 }
+td a {
+  color: #f89406;
+}
+td a:hover {
+  color: #c67605;
+}
 th {
   border-left: 2px solid #EAEDF2;
   border-bottom: 2px solid #EAEDF2;

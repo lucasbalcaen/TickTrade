@@ -98,6 +98,8 @@ header{
 
 table {
   font-family: 'Oswald', sans-serif;
+  width: 90%;
+  margin: 0 auto;
   border-collapse: collapse;
 }
 
@@ -140,6 +142,12 @@ th, td {
 td {
   border-left: 2px solid #EAEDF2;
   border-bottom: 2px solid #EAEDF2;
+  a{
+    color: @oranjekleur;
+    &:hover{
+      color: darken(@oranjekleur,10%);
+    }
+  }
 }
 
 th{
@@ -163,8 +171,10 @@ td:last-child {
 }
 
 .kleinvak{
+  float:right;
+  display: inline-block;
   width: 20%;
-  margin-left: 30px;
+  margin-left: 71%;
   min-width:200px ;
   margin-top: 40px;
 }
@@ -173,7 +183,7 @@ td:last-child {
  width: 90%;
 
   min-width:630px ;
-  margin-top: 40px;
+  margin-top: 20px;
   margin-left: auto;
   margin-right: auto;
 }
