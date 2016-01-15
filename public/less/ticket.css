@@ -141,3 +141,9 @@ header {
 .selected {
   color: #f89406;
 }
+#notdiv {
+  position: absolute;
+  bottom: 50px;
+  right: 50px;
+  width: 300px;
+}

@@ -31,7 +31,6 @@ function handleIO(socket){
   {
     console.log("client disconnected")
   }
-
   console.log("client connected");
   socket.on("disconnect",disconnect);
 
@@ -61,9 +60,18 @@ function handleIO(socket){
         io.emit("testtraderequest",msg);
       }
     });
-
-
   });
+
+  socket.on("tradenotaccept",function(msg){
+    var userIdJezelf = msg[0];
+    var userIdAnder = msg[1];
+    var naamAnder = msg[2];
+
+    console.log("userIdJezelf "+userIdJezelf);
+    console.log("userIdAnder "+userIdAnder);
+    console.log("naamAnder "+naamAnder);
+  });
+
 }
 
 /**

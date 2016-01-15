@@ -22,6 +22,7 @@
         <div class="ui floating labeled icon dropdown button" id="rechterheader" ng-controller="userController">
             <i class="user icon"></i>
             <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
+            <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
             <div class="menu">
                 <div class="item" ng-show="loggedIn">
                     <i class="ticket icon"></i>
@@ -120,5 +121,7 @@
     <script src="./lib/angular/angular-cookies.js"></script>
     <script src="../lib/semantic-ui/semantic.min.js"></script>
 <script src="controllers/clientMyTradedTicketsController.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="js/notificatieRequestSocket.js"></script>
 </body>
 </html>

@@ -21,6 +21,7 @@
             <div class="ui floating labeled icon dropdown button" id="rechterheader" ng-controller="userController">
                 <i class="user icon"></i>
                 <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
+                <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
                 <div class="menu">
                     <div class="item" ng-show="loggedIn">
                         <i class="ticket icon"></i>
@@ -67,14 +68,13 @@
 
     <div ng-repeat="verzoek in verzoeken" class="verzoek">
         <div class="content">
-
-            <input type="hidden" value="verzoek[1].user" id="userIdJezelf">
-            <input type="hidden" value="verzoek[2].user" id="userIdAnder">
-
                         <h5>{{verzoek[1].title}}</h5>
                         <img src="images/arrow486.png">
                     <div id="geselecteerd">
                         <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">{{geselecteerd.title}}</p>
+                        <input type="hidden" value="verzoek[1].user" id="userIdJezelf">
+                        <input type="hidden" value="verzoek[2].user" id="userIdAnder">
+                        <input type="hidden" value="verzoek[2].owner" id="naamAnder">
                     </div>
                 <div id="buttons">
                     <button class="ui grey button" id="acceptbtn" ng-click="accept(verzoek[0],verzoek[2].user)"><i class="checkmark icon"></i></button>
@@ -92,6 +92,33 @@
  <script src="../lib/semantic-ui/semantic.min.js"></script>
 
  <script src="./lib/angular/angular.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
  <script src="controllers/clientVerzoekController.js"></script>
+
+    <script src="js/notificatieRequestSocket.js"></script>
+<script>
+    var socket = io.connect();
+    socket.on("connect",function(){
+        console.log("connected");
+    });
+
+    socket.on("disconnect",function(){
+        console.log("disconnected");
+    });
+
+    document.getElementById("acceptbtn").addEventListener("click",function(evt){
+
+        var userIdJezelf = document.getElementById("userIdJezelf").value;
+        var userIdAnder = document.getElementById("userIdAnder").value;
+        var naamAnder = document.getElementById("naamAnder").value;
+        console.log("userIdJezelf "+userIdJezelf);
+        console.log("userIdAnder "+userIdAnder);
+        console.log("naamAnder "+naamAnder);
+        var msg = [userIdJezelf,userIdAnder,naamAnder];
+        if(msg){
+            socket.emit("tradenotaccept",msg);
+        }
+    },false);
+</script>
 </body>
 </html>

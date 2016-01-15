@@ -33,6 +33,7 @@
             <i class="user icon"></i>
             <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
             <input type="hidden" value="{{ currentUser.local.voornaam }}" id="hiddenuser">
+            <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
             <div class="menu">
                 <div class="item" ng-show="loggedIn">
                     <i class="ticket icon"></i>
@@ -147,5 +148,6 @@
 <script src="controllers/clientTicketController.js"></script>
 <script src="/socket.io/socket.io.js"></script>
 <script src="js/ticketregistrerensocket.js"></script>
+<script src="js/notificatieRequestSocket.js"></script>
 </body>
 </html>

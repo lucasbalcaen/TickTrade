@@ -4,6 +4,7 @@
 var socket = io.connect();
 socket.on("connect",function(){
     console.log("connected");
+    console.log(socket.id);
 });
 
 socket.on("disconnect",function(){
