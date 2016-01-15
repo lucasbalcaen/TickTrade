@@ -69,8 +69,8 @@
 
 
 
-    <input type="hidden" value="tickets[0].user" id="userIdJezelf">
-    <input type="hidden" value="tickets[1].user" id="userIdAnder">
+    <input type="hidden" value="{{ tickets[0]['user'] }}" id="userIdJezelf">
+    <input type="hidden" value="{{ tickets[1]['user'] }}" id="userIdAnder">
     
 
 
@@ -86,8 +86,8 @@
    <script src="../lib/angular/angular-route.js"></script>
    <script src="../controllers/clientOnderhandelController.js"></script>
    <script src="/socket.io/socket.io.js"></script>
-   <script src="js/overzichtticketssocket.js"></script>
-   <script src="js/notificatieRequestSocket.js"></script>
+   <script src="../js/overzichtticketssocket.js"></script>
+   <script src="../js/notificatieRequestSocket.js"></script>
 <script>
 
     window.onload = function () {

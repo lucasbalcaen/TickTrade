@@ -23,7 +23,7 @@ exports.create = function(req,res)
 
         entry.save();
 
-        res.redirect('index.html');
+        res.redirect('/');
 
 
 
@@ -37,7 +37,7 @@ exports.createVerzoek = function(req,res){
             bekeken: false
         });
     entry.save();
-    res.redirect('index.html');
+    res.redirect('/');
 };
 
 exports.getTickets = function(req,res){
@@ -109,7 +109,7 @@ exports.createTraded = function (req, res) {
 
     entry.save();
 
-    res.redirect('index.html');
+    res.redirect('/');
 
 };
 
