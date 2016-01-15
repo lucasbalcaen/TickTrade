@@ -64,10 +64,20 @@
 
 <h1>onderhandelen</h1>
 
-<div ng-controller="verzoekController">
-    <input type="text" value="{{ tickets[0].user }}" id="userIdJezelf">
-    <input type="text" value="{{ tickets[1].user }}" id="userIdAnder">
+
+<div ng-controller="verzoekController"  >
+
+
+
+    <input type="hidden" value="tickets[0].user" id="userIdJezelf">
+    <input type="hidden" value="tickets[1].user" id="userIdAnder">
+    
+
+
 </div>
+
+
+
 
    <script src="../js/navnavigatie.js"></script>
    <script src="../js/semanticinits.js"></script>

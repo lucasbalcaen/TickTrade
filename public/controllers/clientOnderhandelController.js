@@ -35,6 +35,7 @@
 
 
             for (var i=0;i<arrAlleTickets.length;i++){
+              
                 $http({
                     url:"/api/ticketViaId",
                     method:"GET",
