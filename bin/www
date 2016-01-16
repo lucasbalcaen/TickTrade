@@ -75,6 +75,11 @@ function handleIO(socket){
 
   });
 
+  socket.on("typeit",function(msg){
+    console.log(msg);
+    socket.broadcast.emit("messages",msg);
+  })
+
 }
 
 /**

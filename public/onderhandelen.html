@@ -6,6 +6,8 @@
     <link rel="stylesheet" type="text/css" href="../lib/semantic-ui/semantic.min.css">
     <link rel="stylesheet" type="text/css" href="../less/onderhandelen.css"/>
     <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
+    <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+    <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <title></title>
 </head>
 <body>
@@ -62,21 +64,24 @@
 </header>
 
 
-<h1>onderhandelen</h1>
+<h1 id="h1tje">Negotiate & Trade</h1>
 
 
 <div ng-controller="verzoekController"  >
-
-
-
     <input type="hidden" value="{{ tickets[0]['user'] }}" id="userIdJezelf">
     <input type="hidden" value="{{ tickets[1]['user'] }}" id="userIdAnder">
-    
-
-
 </div>
 
-
+<div id="messagebox">
+    <div id="bovenste">
+        <p>Live Chat</p>
+    </div>
+    <div id="messages"></div>
+</div>
+<div id="onderste">
+    <input id="typeit">
+    <input type="button" id="sendit" value="Send">
+</div>
 
 
    <script src="../js/navnavigatie.js"></script>
@@ -126,6 +131,26 @@
                     }
                 }, 2000);
 
+        document.getElementById("sendit").addEventListener("click",function(evt){
+            var tekst = document.getElementById("typeit").value;
+            var verzender = document.getElementById("currentUserVoornaam").value;
+            var msg = [tekst,verzender];
+            if(msg){
+                socket.emit("typeit",msg);
+                document.getElementById("messages").innerHTML += "You said: "+msg[0] + "<br>";
+                //document.getElementById("typeit").value = "";
+            }
+        },false)
+
+        function scrollToBottom(){
+
+        }
+        socket.on("messages",function(msg){
+            document.getElementById("messages").innerHTML +=msg[1]+": "+ msg[0] + "<br>";
+            console.log("blabla");
+            document.getElementById("messages").append("<div>hello world</div>");
+            console.log("hoi");
+        });
     }
 
 </script>
