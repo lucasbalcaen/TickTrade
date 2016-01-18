@@ -20,8 +20,7 @@ module.exports = function(app, passport) {
         res.sendfile('./public/login.html');
     });
 
-    app.get('/statistiek', function(req, res) {
-
+    app.get('/statistiek',isLoggedIn, isAdmin, function(req, res) {
         res.sendfile('./public/statistiek.html');
     });
 
@@ -163,17 +162,20 @@ module.exports = function(app, passport) {
 }
 
 
-
-
-
-
 // kijken of de gebruiker ingelogd is *****************************************************
 function isLoggedIn(req, res, next) {
 
     if (req.isAuthenticated())
         return next();
 
-
     // niet ingelogd, naar loginpagina
     res.redirect('/login');
+}
+
+function isAdmin(req,res,next){
+    if(req.user._id == "569d08172158f438154d6c5e"){
+        return next();
+    }else{
+        res.redirect('/');
+    }
 }

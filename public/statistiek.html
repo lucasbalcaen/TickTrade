@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="statistiek">
 <head>
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
@@ -63,33 +63,25 @@
     </div>
 </header>
 
-<canvas id="myChart" width="400" height="400"></canvas>
+<div ng-controller="statistiekcontroller" id="divstat">
+    <div class="grafiekclass">
+        <p>Aantal geposte tickets</p>
+        <canvas id="myChart" ></canvas>
+    </div>
+    <div class="grafiekclass">
+        <p>Aantal soorten tickets</p>
+        <canvas id="mypie" ></canvas>
+    </div>
+
+</div>
 
 <script src="js/navnavigatie.js"></script>
 <script src="js/semanticinits.js"></script>
 <script src="./lib/angular/angular.js"></script>
 <script src="./lib/angular/angular-cookies.js"></script>
+<script src="controllers/clientStatistiekController.js"></script>
 <script src="../lib/semantic-ui/semantic.min.js"></script>
 <script src="js/Chart.js"></script>
-<script>
-    var data = {
-        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
-        datasets: [
-            {
-                label: "My First dataset",
-                fillColor: "rgba(248, 148, 6, 0.2)",
-                strokeColor: "rgba(248, 148, 6, 1)",
-                pointColor: "rgba(248, 148, 6, 1)",
-                pointStrokeColor: "#fff",
-                pointHighlightFill: "#fff",
-                pointHighlightStroke: "rgba(220,220,220,1)",
-                data: [65, 59, 80, 81, 56, 55, 40]
-            }
-        ]
-    };
 
-    var ctx = document.getElementById("myChart").getContext("2d");
-    var myNewChart = new Chart(ctx).Line(data);
-</script>
 </body>
 </html>
