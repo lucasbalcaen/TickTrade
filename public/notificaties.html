@@ -111,6 +111,33 @@
     </div>
     </div>
 
+
+
+    <div ng-controller="eigenNotificatieController" id="acceptedContainer" >
+        <h1>accepted</h1>
+
+        <div ng-repeat="verzoek in accepted" class="verzoek">
+            <div class="content">
+                <h5>{{verzoek[1].title}}</h5>
+                <img src="images/arrow486.png">
+                <div id="geselecteerddd">
+                    <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">{{geselecteerd.title}}</p>
+
+                    <input type="hidden" value="verzoek[1].user" id="userIdAnder3">
+                    <input type="hidden" value="verzoek[2].user" id="userIdJezelf3">
+                    <input type="hidden" value="verzoek[2].owner" id="naamAnder3">
+                </div>
+                <div id="buttons3">
+                    <button class="ui grey button" id="bekijkbtn" ng-click="accept(verzoek[0],verzoek[2].user)">onderhandel</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
  <script src="js/navnavigatie.js"></script>
  <script src="js/semanticinits.js"></script>
  <script src="../lib/semantic-ui/semantic.min.js"></script>

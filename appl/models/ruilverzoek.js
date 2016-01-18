@@ -7,6 +7,7 @@ var verzoekScheme = mongoose.Schema({
     ticketId: String,
     aangebodenId: String,
     userIdAanbieder:String,
+    RuilerId:String,
     bekeken: Boolean
 });
 

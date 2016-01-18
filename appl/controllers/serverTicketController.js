@@ -34,6 +34,7 @@ exports.createVerzoek = function(req,res){
             ticketId:req.body.formGeselecteerdId ,
             aangebodenId: req.body.formAangebodenId ,
             userIdAanbieder:req.body.formAanbiederId,
+            RuilerId:req.body.formRuilerId,
             bekeken: false
         });
     entry.save();
@@ -145,6 +146,21 @@ exports.getVerzoekById=function(req,res){
 
 
 };
+
+exports.getEigenMeldingen=function(req,res){
+
+    var user = req.user._id;
+
+    var query = ruilverzoek.find({RuilerId:user, bekeken:true});
+    query.exec(function(err,obj) {
+        res.json(obj);
+    });
+
+
+
+};
+
+
 
 
 // deleten ******************************************************

@@ -128,7 +128,11 @@ module.exports = function(app, passport) {
 
     app.get('/api/accnotificaties/:idnotificatie',function(req,res){
         return ticketController.accNotificatie(req,res);
-    })
+    });
+
+    app.get('/api/getEigenNotificaties',function(req,res){
+        return ticketController.getEigenMeldingen(req,res);
+    });
 
     // alle posts in de nav *******************************************************************
 

@@ -126,6 +126,7 @@
             </div>
         <form id="formpje"  method="post" action="/notificatietoevoegen" >
         <input type="hidden" name="formAanbiederId" id="formAanbiederId" ng-controller="oneTicketController"  value="{{ ticketje.user }}">
+            <input type="hidden" name="formRuilerId" id="formRuilerId" ng-controller="userController" value="{{ currentUser._id }}">
         <input type="hidden" name="formAangebodenId" id="formAangebodenId">
         <input type="hidden" name="formGeselecteerdId" id="formGeselecteerdId">
         <button class="ui orange button" id="btnTrade">Trade<i class="right arrow icon"></i></button>

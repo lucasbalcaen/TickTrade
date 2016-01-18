@@ -110,6 +110,45 @@
     }]);
 
 
+    verzoek.controller('eigenNotificatieController', ['$scope', '$http', function($scope, $http) {
+
+
+        //alle verzoekenophalen waar jij de mee wil ruilen
+
+        $http.get("/api/getEigenNotificaties").then(function(result){
+            var verzoeken = result.data;
+            var arrayVerzoeken = [];
+            // tickets en aangeboden tickets gaan ophalen
+            for (var q=0;q<verzoeken.length;q++) {
+
+                var aangeboden = [verzoeken[q].aangebodenId];
+                var arrtickets = verzoeken[q].ticketId;
+                var arrayTickets = [];
+                var stukken = arrtickets.split(",");
+                var arrAlleTickets=[];
+                 arrAlleTickets = aangeboden.concat(stukken);
+
+                console.log(arrAlleTickets);
+                for (var i=0;i<arrAlleTickets.length;i++){
+
+                    $http({
+                        url:"/api/ticketViaId",
+                        method:"GET",
+                        params:{ids:arrAlleTickets[i]}
+                    }).then(function(result){
+
+                        arrayTickets.push(result.data);
+                    });
+                }
+                arrayVerzoeken.push(arrayTickets);
+
+            }
+            $scope.accepted = arrayVerzoeken;
+        });
+
+    }]);
+
+
 
     verzoek.controller('userController', ['$scope', '$http', function($scope, $http ) {
         $http.get("/api/getUser").then(function (result) {
