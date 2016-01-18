@@ -104,14 +104,15 @@ header{
 #messagebox{
   width: 480px;
   height: 500px;
-  background-color: red;
+  background-color: white;
   border-radius: 1%;
-
+  margin-left: 10%;
 }
 
 #bovenste{
   width: 480px;
-  background-color: yellow;
+  background-color: lightgrey;
+  color: #555555;
   p{
     font-size: 20px;
     margin-left: 10px;
@@ -128,12 +129,60 @@ header{
 }
 
 #onderste{
-  background-color: orange;
   padding-top: 10px;
   padding-bottom: 10px;
   width: 480px;
   margin-top: 10px;
   border-radius: 1%;
+  margin-left: 10%;
+
+  #inputdiv{
+    width:  80%;
+  }
+
+  #sendit{
+    margin-left: 10px;
+  }
+}
+
+.ontvangen{
+  max-width: 250px;
+  height: auto;
+  background-color: darkgrey;
+  margin-left: 20px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding-right: 20px;
+
+  .tekstp{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+  }
+}
+
+.verzonden{
+  max-width: 250px;
+  height: auto;
+  background-color: darkgrey;
+  margin-left: 40%;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  border-radius: 15px;
+  padding-right: 20px;
+
+  .tekstv{
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    color: white;
+  }
 }
 
 

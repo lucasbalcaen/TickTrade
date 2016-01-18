@@ -70,6 +70,7 @@
 <div ng-controller="verzoekController"  >
     <input type="hidden" value="{{ tickets[0]['user'] }}" id="userIdJezelf">
     <input type="hidden" value="{{ tickets[1]['user'] }}" id="userIdAnder">
+    <input type="hidden" value="{{ verzoek._id }}" id="idGesprek">
 </div>
 
 <div id="messagebox">
@@ -79,8 +80,11 @@
     <div id="messages"></div>
 </div>
 <div id="onderste">
-    <input id="typeit">
-    <input type="button" id="sendit" value="Send">
+    <div class="ui left icon input" id="inputdiv">
+        <input type="text" id="typeit" placeholder="Send a message">
+        <i class="comment icon"></i>
+    </div>
+    <button class="ui inverted orange button" id="sendit">Send</button>
 </div>
 
 
@@ -95,7 +99,9 @@
    <script src="../js/notificatieRequestSocket.js"></script>
 <script>
 
-    window.onload = function () {
+    $( document ).ready(function() {
+        console.log( "document ready!" );
+
         var socket = io.connect();
         socket.on("connect",function(){
             console.log("connected");
@@ -108,6 +114,9 @@
         setTimeout(
                 function()
                 {
+                    var krijgmessages = document.getElementById("idGesprek").value;
+                    socket.emit("getmessages",krijgmessages);
+
                     var userIdJezelf = document.getElementById("userIdJezelf").value;
                     var userIdAnder = document.getElementById("userIdAnder").value;
                     var naamAnder = document.getElementById("currentUserVoornaam").value;
@@ -127,31 +136,38 @@
                     var msg = [eigenID,echteID,naamAnder];
                     if(msg){
                         socket.emit("tradenotaccept",msg);
-                        console.log("de shit is verstuurd");
+                        //console.log("de shit is verstuurd");
                     }
                 }, 2000);
 
-        document.getElementById("sendit").addEventListener("click",function(evt){
-            var tekst = document.getElementById("typeit").value;
-            var verzender = document.getElementById("currentUserVoornaam").value;
-            var msg = [tekst,verzender];
-            if(msg){
-                socket.emit("typeit",msg);
-                document.getElementById("messages").innerHTML += "You said: "+msg[0] + "<br>";
-                //document.getElementById("typeit").value = "";
-            }
-        },false)
+                $( "#sendit" ).click(function() {
+                    var tekst = document.getElementById("typeit").value;
+                    if(tekst){
+                        var verzender = document.getElementById("currentUserVoornaam").value;
+                        var chatroomID = document.getElementById("idGesprek").value;
+                        var msg = [tekst,verzender,chatroomID];
+                        if(msg){
+                            socket.emit("typeit",msg);
+                            $("#messages").append('<div class="verzonden"><p class="tekstv">'+'You: ' +msg[0]+'</p></div>');
+                            document.getElementById("typeit").value = "";
+                            var element = document.getElementById("messages");
+                            element.scrollTop = element.scrollHeight;
+                        }
+                    }
 
-        function scrollToBottom(){
 
-        }
+                });
+
         socket.on("messages",function(msg){
-            document.getElementById("messages").innerHTML +=msg[1]+": "+ msg[0] + "<br>";
-            console.log("blabla");
-            document.getElementById("messages").append("<div>hello world</div>");
-            console.log("hoi");
+            $("#messages").append('<div class="ontvangen"><p class="tekstp">'+msg[1]+': '+msg[0]+'</p></div>');
+            var element = document.getElementById("messages");
+            element.scrollTop = element.scrollHeight;
         });
-    }
+    });
+
+    /*window.onload = function () {
+
+    }*/
 
 </script>
 </body>

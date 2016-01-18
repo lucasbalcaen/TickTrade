@@ -8,6 +8,7 @@ var app = require('../app');
 var debug = require('debug')('TickTrade:server');
 var http = require('http');
 var ingelogdeUserController = require('../appl/controllers/ingelogdeUserController.js');
+var chatController = require('../appl/controllers/chatController.js');
 
 
 /**
@@ -77,7 +78,16 @@ function handleIO(socket){
 
   socket.on("typeit",function(msg){
     console.log(msg);
+    var tekst = msg[0];
+    var verzender = msg[1];
+    var chatroomID = msg[3];
+    chatController.create(tekst,verzender,chatroomID);
     socket.broadcast.emit("messages",msg);
+  });
+
+  socket.on("getmessages",function(msg){
+    console.log("getmessages: "+msg);
+    //chatController.getMessages(msg);
   })
 
 }
