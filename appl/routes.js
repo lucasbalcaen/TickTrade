@@ -20,6 +20,11 @@ module.exports = function(app, passport) {
         res.sendfile('./public/login.html');
     });
 
+    app.get('/statistiek', function(req, res) {
+
+        res.sendfile('./public/statistiek.html');
+    });
+
     app.get('/signup', function(req, res) {
         res.sendfile('./public/register.html');
     });

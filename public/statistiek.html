@@ -1,17 +1,16 @@
 <!DOCTYPE html>
-<html ng-app="onderhandel">
-<head lang="en">
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" type="text/css" href="../less/navicoon.css"/>
+    <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
     <link rel="stylesheet" type="text/css" href="../lib/semantic-ui/semantic.min.css">
-    <link rel="stylesheet" type="text/css" href="../less/onderhandelen.css"/>
+    <link rel="stylesheet" type="text/css" href="less/statistiek.css"/>
     <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
-    <title></title>
+    <title>Statistiek</title>
 </head>
 <body>
-
 <header>
     <div id="bovenbar">
         <div class="hamburger">
@@ -19,12 +18,11 @@
             <div></div>
             <div></div>
         </div>
-        <img id="logo" src="../images/logo.png" >
+        <img id="logo" src="images/logo.png" >
         <div class="ui floating labeled icon dropdown button" id="rechterheader" ng-controller="userController">
             <i class="user icon"></i>
             <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
             <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
-            <input type="hidden" value="{{ currentUser.local.voornaam}}" id="currentUserVoornaam">
             <div class="menu">
                 <div class="item" ng-show="loggedIn">
                     <i class="ticket icon"></i>
@@ -53,51 +51,45 @@
     <div class="zijmenu">
         <!-- Menu -->
         <ul>
+
             <li><a href="/">Home</a></li>
             <li><a href="/werking">Werking</a></li>
             <li><a href="/overzichttickets">Browse Tickets</a></li>
             <li><a href="/mytickets">My tickets</a></li>
             <li><a href="/ticketregistreren">Add ticket</a></li>
             <li><a href="#">Contact</a></li>
+
         </ul>
     </div>
 </header>
 
+<canvas id="myChart" width="400" height="400"></canvas>
 
-<h1 id="h1tje">Negotiate & Trade</h1>
+<script src="js/navnavigatie.js"></script>
+<script src="js/semanticinits.js"></script>
+<script src="./lib/angular/angular.js"></script>
+<script src="./lib/angular/angular-cookies.js"></script>
+<script src="../lib/semantic-ui/semantic.min.js"></script>
+<script src="js/Chart.js"></script>
+<script>
+    var data = {
+        labels: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"],
+        datasets: [
+            {
+                label: "My First dataset",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 80, 81, 56, 55, 40]
+            }
+        ]
+    };
 
-
-<div ng-controller="verzoekController"  >
-    <input type="hidden" value="{{ tickets[0]['user'] }}" id="userIdJezelf">
-    <input type="hidden" value="{{ tickets[1]['user'] }}" id="userIdAnder">
-    <input type="hidden" value="{{ verzoek._id }}" id="idGesprek">
-</div>
-
-<div id="messagebox">
-    <div id="bovenste">
-        <p>Live Chat</p>
-    </div>
-    <div id="messages"></div>
-</div>
-<div id="onderste">
-    <div class="ui left icon input" id="inputdiv">
-        <input type="text" id="typeit" placeholder="Send a message">
-        <i class="comment icon"></i>
-    </div>
-    <button class="ui inverted orange button" id="sendit">Send</button>
-</div>
-
-
-   <script src="../js/navnavigatie.js"></script>
-   <script src="../js/semanticinits.js"></script>
-   <script src="../lib/semantic-ui/semantic.min.js"></script>
-   <script src="../lib/angular/angular.js"></script>
-   <script src="../lib/angular/angular-route.js"></script>
-   <script src="../controllers/clientOnderhandelController.js"></script>
-   <script src="/socket.io/socket.io.js"></script>
-   <script src="../js/overzichtticketssocket.js"></script>
-   <script src="../js/notificatieRequestSocket.js"></script>
-    <script src="../js/onderhandelensocket.js"></script>
-
+    var ctx = document.getElementById("myChart").getContext("2d");
+    var myNewChart = new Chart(ctx).Line(data);
+</script>
 </body>
 </html>
