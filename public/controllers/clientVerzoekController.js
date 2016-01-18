@@ -11,8 +11,10 @@
 
 
         var arrayVerzoeken=[];
+        var arrBekeken=[];
         var arrayTickets=[];
         var arrayId=[];
+        var arrayIdverzoeken=[];
         $http.get("/api/getmyverzoeken").then(function(result){
              var verzoeken =result.data;
             /*for (var i=0;i<verzoeken.length;i++){
@@ -39,27 +41,51 @@
                     for (var q=0;q<verzoeken.length;q++) {
                         var aangeboden = verzoeken[q].aangebodenId;
                         var arrtickets = verzoeken[q].ticketId;
+                        var arrayBekeken = [];
 
                         var stukken = arrtickets.split(",");
 
                     for (var i = 0; i < obj.length; i++){
                         if (obj[i]._id == aangeboden) {
-                            arrayTickets.push(verzoeken[q]._id);
-                           arrayTickets.push(obj[i]);
+                           if(verzoeken[q].bekeken == true) {
+                               arrayBekeken.push(verzoeken[q]._id);
+                               arrayBekeken.push(obj[i]);
+                              // arrayTickets.push(verzoeken[q]._id);
+                              // arrayTickets.push(obj[i]);
+
+                            }else {
+                                arrayTickets.push(verzoeken[q]._id);
+                                arrayTickets.push(obj[i]);
+                            }
                         }
                     }
 
                     for (var y =0; y<stukken.length;y++) {
                         for (var d = 0; d < obj.length; d++) {
                             if (obj[d]._id == stukken[y]) {
-                                arrayTickets.push(obj[d]);
+                                if(verzoeken[q].bekeken == true) {
+                                 //   arrayTickets.push(obj[d]);
+                                    arrayBekeken.push(obj[d]);
+                                }else{
+                                    arrayTickets.push(obj[d]);
+
+                                }
                             }
                         }
                     }
                         arrayVerzoeken.push(arrayTickets);
+                        arrBekeken.push(arrayBekeken);
                         arrayTickets=[];
+                        arrayBekeken=[]
+                        arrayVerzoeken.clean("");
+                        arrBekeken.clean("");
+
                         $scope.verzoeken = arrayVerzoeken;
+
+                        $scope.bekeken = arrBekeken;
+
                         $scope.ids = arrayId;
+                        $scope.idspending=arrayIdverzoeken;
                     }
                 });
 
@@ -97,6 +123,16 @@
 
         })
     }]);
+
+    Array.prototype.clean = function(deleteValue) {
+        for (var i = 0; i < this.length; i++) {
+            if (this[i] == deleteValue) {
+                this.splice(i, 1);
+                i--;
+            }
+        }
+        return this;
+    };
 
 
 })(angular.module("verzoek",[]));
