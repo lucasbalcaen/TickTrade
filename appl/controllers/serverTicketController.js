@@ -94,7 +94,7 @@ exports.getMyTraded = function (req, res) {
     });
 };
 
-exports.getMyTraded = function (req, res) {
+exports.getMyTraded2 = function (req, res) {
     var user = req.user.id;
 
     var query = TradedTicket.find({"user2": user.toString()});

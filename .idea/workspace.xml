@@ -51,10 +51,10 @@
       <file leaf-file-name="serverTicketController.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/appl/controllers/serverTicketController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.69906545" vertical-offset="1309" max-vertical-offset="3961">
-              <caret line="99" column="41" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="41" />
+            <state vertical-scroll-proportion="0.6037383" vertical-offset="1309" max-vertical-offset="3961">
+              <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
               <folding>
-                <element signature="e#3479#4366#0" expanded="false" />
+                <element signature="e#3480#4367#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -567,7 +567,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453238345198</updated>
     </task>
-    <option name="localTasksCounter" value="23" />
+    <task id="LOCAL-00023" summary="get andere tickets">
+      <created>1453239037117</created>
+      <option name="number" value="00023" />
+      <option name="project" value="LOCAL" />
+      <updated>1453239037117</updated>
+    </task>
+    <option name="localTasksCounter" value="24" />
     <servers />
   </component>
   <component name="TodoView">
@@ -658,7 +664,8 @@
     <MESSAGE value="onderhandelen alles staat klaar" />
     <MESSAGE value="accepted" />
     <MESSAGE value="accepted opgelost" />
-    <option name="LAST_COMMIT_MESSAGE" value="accepted opgelost" />
+    <MESSAGE value="get andere tickets" />
+    <option name="LAST_COMMIT_MESSAGE" value="get andere tickets" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1034,10 +1041,10 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/appl/controllers/serverTicketController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.69906545" vertical-offset="1309" max-vertical-offset="3961">
-          <caret line="99" column="41" selection-start-line="99" selection-start-column="41" selection-end-line="99" selection-end-column="41" />
+        <state vertical-scroll-proportion="0.6037383" vertical-offset="1309" max-vertical-offset="3961">
+          <caret line="96" column="20" selection-start-line="96" selection-start-column="20" selection-end-line="96" selection-end-column="20" />
           <folding>
-            <element signature="e#3479#4366#0" expanded="false" />
+            <element signature="e#3480#4367#0" expanded="false" />
           </folding>
         </state>
       </provider>
