@@ -89,7 +89,7 @@ function handleIO(socket){
   socket.on("getmessages",function(msg){
     console.log("getmessages: "+msg);
     //chatController.getMessages(msg);
-  })
+  });
 
   socket.on("afhandelen",function(msg){
     var idaangeboden = msg[0];
@@ -112,6 +112,8 @@ function handleIO(socket){
     var anderTicketCity = msg[17];
     var eigenTicketUser = msg[18];
     var anderTicketUser = msg[19];
+
+    console.log(msg);
 
     ticketController.createTraded(eigenTicketOwner,eigenTicketTitle,eigenTicketSort,eigenTicketDescription,eigenTicketAmount,eigenTicketPrice,eigenTicketCity,anderTicketOwner,anderTicketTitle,anderTicketSort,anderTicketDescription,anderTicketAmount,anderTicketPrice,anderTicketCity,eigenTicketUser,anderTicketUser);
     ticketController.createAfgehandeld(idaangeboden,userAanbieder,userRuiler,idtickets);
