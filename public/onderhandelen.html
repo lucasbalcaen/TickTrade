@@ -98,7 +98,13 @@
                 <span class="right floated"><i class="location arrow icon"></i>{{ tickets[0].city }}</span>
                 <span><i class="calendar icon"></i>{{  tickets[0].datum }}</span>
             </div>
-
+            <input type="hidden" value="{{ tickets[0].owner }}" id="eigenTicketOwner" />
+            <input type="hidden" value="{{ tickets[0].title }}" id="eigenTicketTitle" />
+            <input type="hidden" value="{{ tickets[0].sort }}" id="eigenTicketSort" />
+            <input type="hidden" value="{{ tickets[0].description }}" id="eigenTicketDescription" />
+            <input type="hidden" value="{{ tickets[0].amount }}" id="eigenTicketAmount" />
+            <input type="hidden" value="{{ tickets[0].price }}" id="eigenTicketPrice" />
+            <input type="hidden" value="{{ tickets[0].city }}" id="eigenTicketCity" />
         </div>
     </div>
 
@@ -123,7 +129,13 @@
                 <span class="right floated"><i class="location arrow icon"></i>{{ ticket.city }}</span>
                 <span><i class="calendar icon"></i>{{  ticket.datum }}</span>
             </div>
-
+            <input type="hidden" value="{{ ticket.owner }}" id="anderTicketOwner" />
+            <input type="hidden" value="{{ ticket.title }}" id="anderTicketTitle" />
+            <input type="hidden" value="{{ ticket.sort }}" id="anderTicketSort" />
+            <input type="hidden" value="{{ ticket.description }}" id="anderTicketDescription" />
+            <input type="hidden" value="{{ ticket.amount }}" id="anderTicketAmount" />
+            <input type="hidden" value="{{ ticket.price }}" id="anderTicketPrice" />
+            <input type="hidden" value="{{ ticket.city }}" id="anderTicketCity" />
         </div>
     </div>
     <button class="ui orange button" id="btnTrade" ng-click="trade(verzoek._id)"  ng-show="tickets[0].owner==currentUser.local.voornaam">Trade!</button>

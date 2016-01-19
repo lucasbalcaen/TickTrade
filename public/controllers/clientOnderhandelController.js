@@ -75,28 +75,35 @@
                 console.log("disconnected");
             });
 
+            var anderTicketOwner = document.getElementById('anderTicketOwner').value;
+            var anderTicketTitle = document.getElementById('anderTicketTitle').value;
+            var anderTicketSort = document.getElementById('anderTicketSort').value;
+            var anderTicketDescription = document.getElementById('anderTicketDescription').value;
+            var anderTicketAmount = document.getElementById('anderTicketAmount').value;
+            var anderTicketPrice = document.getElementById('anderTicketPrice').value;
+            var anderTicketCity = document.getElementById('anderTicketCity').value;
+
+            var eigenTicketOwner = document.getElementById('eigenTicketOwner').value;
+            var eigenTicketTitle = document.getElementById('eigenTicketTitle').value;
+            var eigenTicketSort = document.getElementById('eigenTicketSort').value;
+            var eigenTicketDescription = document.getElementById('eigenTicketDescription').value;
+            var eigenTicketAmount = document.getElementById('eigenTicketAmount').value;
+            var eigenTicketPrice = document.getElementById('eigenTicketPrice').value;
+            var eigenTicketCity = document.getElementById('eigenTicketCity').value;
+
+
             var alleTickets = document.getElementById('alleTickets').value;
             var deel1 = alleTickets.replace('[','');
             var deel2 = deel1.replace(']','');
             var stukken = deel2.split(',');
 
-            var idtickets =[];
+            var idtickets =stukken[1].substring(1,25);
 
-            for( var i = 0; i<stukken.length;i++){
-               var test = stukken[i].substring(2,25);
-
-                if(i>0){
-                    idtickets.push(test);
-                }
-            }
-
-
-
-            var idaangeboden = stukken[0].substring(2,25);
+            var idaangeboden = stukken[0].substring(1,25);
             var userAanbieder = document.getElementById('userIdAnder').value;
             var userRuiler = document.getElementById('userIdJezelf').value;
 
-            var msg = [idaangeboden,userAanbieder,userRuiler,idtickets];
+            var msg = [idaangeboden,userAanbieder,userRuiler,idtickets,eigenTicketOwner,eigenTicketTitle,eigenTicketSort,eigenTicketDescription,eigenTicketAmount,eigenTicketPrice,eigenTicketCity,anderTicketOwner,anderTicketTitle,anderTicketSort,anderTicketDescription,anderTicketAmount,anderTicketPrice,anderTicketCity];
 
             socket.emit("afhandelen",msg);
 

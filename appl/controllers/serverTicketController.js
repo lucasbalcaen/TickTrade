@@ -102,17 +102,19 @@ exports.createAfgehandeld = function(idaangeboden,userAanbieder,userRuiler,idTic
         ruilerId:idTickets
     });
 
+
     entry.save();
 
     var id2 = idaangeboden;
+    console.log("ID2 IS "+id2);
     var query = Ticket.remove({"_id":id2});
     query.exec(function(err,results){
         console.log("HIJ IS GEDELETED")
     });
 
     var id3 = userRuiler;
-    var query = Ticket.remove({"_id":id3});
-    query.exec(function(err,results){
+    var query2 = Ticket.remove({"_id":id3});
+    query2.exec(function(err,results){
         console.log("HIJ IS GEDELETED")
     });
 
@@ -120,18 +122,18 @@ exports.createAfgehandeld = function(idaangeboden,userAanbieder,userRuiler,idTic
 };
 
 
-exports.createTraded = function (req, res) {
+exports.createTraded = function (eigenTicketOwner,eigenTicketTitle,eigenTicketSort,eigenTicketDescription,eigenTicketAmount,eigenTicketPrice,eigenTicketCity,anderTicketOwner,anderTicketTitle,anderTicketSort,anderTicketDescription,anderTicketAmount,anderTicketPrice,anderTicketCity) {
     var entry = new TradedTicket({
-        title: req.body.formTicketTitle,
-        sort: req.body.formTicketSort,
-        price: req.body.formTicketPrice,
-        amount: req.body.formTicketAmount,
-        owner: req.user.local.voornaam,
+        title: eigenTicketTitle,
+        sort: eigenTicketSort,
+        price: eigenTicketPrice,
+        amount: eigenTicketAmount,
+        owner: eigenTicketOwner,
         user: req.user._id,
-        title2: req.body.formTicketTitle2,
-        sort2: req.body.formTicketSort2,
-        price2: req.body.formTicketPrice2,
-        amount2: req.body.formTicketAmount2,
+        title2: anderTicketTitle,
+        sort2: anderTicketSort,
+        price2: anderTicketPrice,
+        amount2: anderTicketAmount,
         user2: req.user._id
     });
 
@@ -170,8 +172,6 @@ exports.getVerzoekById=function(req,res){
         res.json(obj);
     });
 
-
-
 };
 
 exports.getEigenMeldingen=function(req,res){
@@ -186,10 +186,6 @@ exports.getEigenMeldingen=function(req,res){
 
 
 };
-
-
-
-
 
 
 // deleten ******************************************************

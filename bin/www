@@ -98,9 +98,23 @@ function handleIO(socket){
     var userAanbieder = msg[1];
     var userRuiler = msg[2];
     var idtickets = msg[3];
+    var eigenTicketOwner = msg[4];
+    var eigenTicketTitle = msg[5];
+    var eigenTicketSort =msg[6];
+    var eigenTicketDescription =msg[7];
+    var eigenTicketAmount =msg[8];
+    var eigenTicketPrice =msg[9];
+    var eigenTicketCity =msg[10];
+    var anderTicketOwner = msg[11];
+    var anderTicketTitle = msg[12];
+    var anderTicketSort = msg[13];
+    var anderTicketDescription = msg[14];
+    var anderTicketAmount = msg[15];
+    var anderTicketPrice = msg[16];
+    var anderTicketCity = msg[17];
 
     ticketController.createAfgehandeld(idaangeboden,userAanbieder,userRuiler,idtickets);
-
+    ticketController.createTraded(eigenTicketOwner,eigenTicketTitle,eigenTicketSort,eigenTicketDescription,eigenTicketAmount,eigenTicketPrice,eigenTicketCity,anderTicketOwner,anderTicketTitle,anderTicketSort,anderTicketDescription,anderTicketAmount,anderTicketPrice,anderTicketCity);
   })
 
 }
