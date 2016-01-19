@@ -10,7 +10,7 @@
     <link href='https://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'>
     <title></title>
 </head>
-<body>
+<body ng-controller="myTradedController">
 <header>
     <div id="bovenbar">
         <div class="hamburger">
@@ -66,59 +66,50 @@
 </header>
 
 <h1 id="h1mytraded">My traded tickets</h1>
-<div id="divkaartjes">
-<div class="ui two column very relaxed grid" ng-controller="myTradedController"  >
-    <div class="column" ng-repeat="traded in mytraded">
-        <div class="ui card" id="kaart1">
+<div class="midden">
+    <i class="exchange icon"></i>
+</div>
+<div id="container"  ng-repeat="traded in mytraded">
+    <div class="leftkaart">
+        <div class="ui card kaart1">
             <div class="content">
                 <span class="right floated"><i class="user icon"></i>  {{ traded.owner }} </span>
+
                 <div class="header">
                     {{ traded.title }}
                 </div>
                 <div class="content">
                     {{ traded.sort }}
-                    <span id="spanprijs2" class="right floated"><i class="euro icon"></i>  {{ traded.price }} </span>
-                    <span id="spanticket2" class="right floated"><i class="ticket icon"></i>  {{ traded.amount }} </span>
+                        <span  class="right floated"><i
+                                class="euro icon"></i>  {{ traded.price }} </span>
+                        <span  class="right floated"><i
+                                class="ticket icon"></i>  {{ traded.amount }} </span>
                 </div>
-                <div class="description" id="description2">
-                    {{ traded.description2 }}
-
-                </div>
-                <div class="extra content" id="eventinfo2">
-                    <span class="right floated"><i class="location arrow icon"></i>{{ traded.city }}</span>
-                    <span><i class="calendar icon"></i>{{  traded.datum }}</span>
-                </div>
-
-            </div></div>
+            </div>
+        </div>
     </div>
-    <div class="ui vertical divider" id="divider">
-   traded for
-    </div>
-    <div class="column" ng-repeat="traded in mytraded">
-        <div class="ui card" id="kaart2">
+    <div class="rightcard">
+        <div class="ui card kaart2">
             <div class="content">
                 <span class="right floated"><i class="user icon"></i>  {{ traded.owner2 }} </span>
+
                 <div class="header">
                     {{ traded.title2 }}
                 </div>
                 <div class="content">
-                    {{ traded.sort }}
-                    <span id="spanprijs" class="right floated"><i class="euro icon"></i>  {{ traded.price2 }} </span>
-                    <span id="spanticket" class="right floated"><i class="ticket icon"></i>  {{ traded.amount2 }} </span>
+                    {{ traded.sort2 }}
+                        <span  class="right floated"><i
+                                class="euro icon"></i>  {{ traded.price2 }} </span>
+                        <span  class="right floated"><i
+                                class="ticket icon"></i>  {{ traded.amount2 }} </span>
                 </div>
-                <div class="description" id="description">
-                    {{ traded.description2 }}
-
-                </div>
-                <div class="extra content" id="eventinfo">
-                    <span class="right floated"><i class="location arrow icon"></i>{{ traded.city2 }}</span>
-                    <span><i class="calendar icon"></i>{{  traded.datum2 }}</span>
-                </div>
-
             </div>
+        </div>
     </div>
 </div>
-</div>
+
+
+
     <script src="js/navnavigatie.js"></script>
     <script src="js/semanticinits.js"></script>
     <script src="./lib/angular/angular.js"></script>

@@ -96,42 +96,47 @@ header{
   text-transform: uppercase;
 }
 
-#kaart1{
+#container{
+  display: block;
+  width: 50%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.leftkaart{
+  display: inline-block;
+  width: 40%;
+  margin-left: auto;
+  float: left;
+  margin-top: 30px;
+}
+
+.rightcard{
+  display: inline-block;
+  width: 40%;
+  margin-right: auto;
+  float: right;
+  margin-top: 30px;
+}
+.kaart1{
   margin: auto;
-  width: 90%
+  width: 100%
 }
-#kaart2{
+.kaart2{
   margin: auto;
-  width: 90%
-}
-#spanticket{
-  padding-right: 10px;
+  width: 100%
 }
 
-#eventinfo{
-  margin-top: 20px;
+.midden{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  i{
+    color: @oranjekleur;
+    width: 50px;
+    font-size: 40px;
+  }
 }
-
-#description{
-  margin-top: 10px;
-}
-
-#spanticket2{
-  padding-right: 10px;
-}
-
-#eventinfo2{
-  margin-top: 20px;
-}
-
-#description2{
-  margin-top: 10px;
-}
-
-#divider{
-  margin-top: 70px;
-}
-
 #notdiv{
   position: absolute;
   bottom: 50px;
