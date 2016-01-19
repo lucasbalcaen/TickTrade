@@ -94,6 +94,15 @@ exports.getMyTraded = function (req, res) {
     });
 };
 
+exports.getMyTraded = function (req, res) {
+    var user = req.user.id;
+
+    var query = TradedTicket.find({"user2": user.toString()});
+    query.exec(function (err, results) {
+        res.json(results);
+    });
+};
+
 exports.createAfgehandeld = function(idaangeboden,userAanbieder,userRuiler,idTickets){
     var entry = new afhandelen({
         ticketId: idTickets,
