@@ -5,9 +5,14 @@
     <link rel="stylesheet" type="text/css" href="less/styleWerking.css"/>
     <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
     <link rel="stylesheet" type="text/css" href="../lib/semantic-ui/semantic.min.css">
+    <link rel="stylesheet" href="less/animate.css">
     <script src="../lib/jquery/jquery-2.1.4.min.js"></script>
     <script src="../lib/semantic-ui/semantic.min.js"></script>
-    <title></title>
+    <script src="js/wow.min.js"></script>
+    <script>
+        new WOW().init();
+    </script>
+    <title>Werking</title>
 </head>
 <body>
  <header>
@@ -40,21 +45,24 @@
 
      <img id="headerimage" src="images/headerWerking.jpg">
  </header>
- <article id="uitleg">
 
-     <div class="ui container">
-         <div class="ui relaxed divided items">
-            <h1 class="ui center aligned header">Register your own ticket</h1>
-                <div class="imagesuitleg">
-                        <img src="images/stap1.JPG" id="image1s1" >
-                        <img src="images/stap1Uitleg.JPG" id="image2s1">
-                </div>
-         </div>
-
-     </div>
-
-
- </article>
+<div id="uitleg">
+    <div class="floatleft wow slideInLeft" id="stap1">
+        <p class="uitlegp"><span class="spanp">1.</span> To use TickTrade you will first have to register an account. You can do this by pressing the user dropdown on the top right corner and go to the register section.</p>
+    </div>
+    <div class="floatright wow slideInRight" id="stap2">
+        <p class="uitlegp"><span class="spanp">2.</span> Most likely you will already have tickets you want to register to start interacting with other TickTrade users. You can do this once you are authorised by pressing the hamburger icon and go to the add a ticket section</p>
+    </div>
+    <div class="floatleft wow slideInLeft" id="stap3">
+        <p class="uitlegp"><span class="spanp">3.</span> At this point you are ready to trade some tickets! On the home page you can see an overview of the last posted tickets. By clicking on the hamburger icon and navigating to browse tickets you can see an overview of all listed tickets. You can search on specific keywords or you can use a category filter.</p>
+    </div>
+    <div class="floatright wow slideInRight" id="stap4">
+        <p class="uitlegp"><span class="spanp">4.</span> Once you've found a ticket interesting ticket you can click on it to see more details about it. If you'd like to make a deal for this ticket you can select one of your tickets as offer for this specific ticket. If you do so the other user will receive a notification that you would like to trade with him!</p>
+    </div>
+    <div class="floatleft wow slideInLeft" id="stap5">
+        <p class="uitlegp"><span class="spanp">5.</span> When people want to trade with you will will receive a notification. You can see all your pending requests in the notifications section of the site (Click on the user dropdown in the top right corner and navigate to notificiations). You can accept or decline offers. Once you accept an offer the other user will get a notification saying you accepted the trade. You will be redirected to a page where you can have a livechat with the other user to make specific arrangements how you'd like to trade with each other.</p>
+    </div>
+</div>
 
 
 

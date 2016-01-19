@@ -2,26 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="d2aa9c3c-cdc4-4ac7-a73b-2fce7e043951" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/controllers/clientTicketController.js" afterPath="$PROJECT_DIR$/public/controllers/clientTicketController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/index.html" afterPath="$PROJECT_DIR$/public/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/login.css" afterPath="$PROJECT_DIR$/public/less/login.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/login.html" afterPath="$PROJECT_DIR$/public/login.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/login.less" afterPath="$PROJECT_DIR$/public/less/login.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mytickets.html" afterPath="$PROJECT_DIR$/public/mytickets.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/mytraded.html" afterPath="$PROJECT_DIR$/public/mytraded.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/mytraded.less" afterPath="$PROJECT_DIR$/public/less/mytraded.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/notificaties.html" afterPath="$PROJECT_DIR$/public/notificaties.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/onderhandelen.html" afterPath="$PROJECT_DIR$/public/onderhandelen.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/overzichttickets.html" afterPath="$PROJECT_DIR$/public/overzichttickets.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/register.css" afterPath="$PROJECT_DIR$/public/less/register.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/register.html" afterPath="$PROJECT_DIR$/public/register.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/register.less" afterPath="$PROJECT_DIR$/public/less/register.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/appl/routes.js" afterPath="$PROJECT_DIR$/appl/routes.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/statistiek.html" afterPath="$PROJECT_DIR$/public/statistiek.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/ticket.html" afterPath="$PROJECT_DIR$/public/ticket.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/ticketRegistreren.css" afterPath="$PROJECT_DIR$/public/less/ticketRegistreren.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/ticketRegistreren.less" afterPath="$PROJECT_DIR$/public/less/ticketRegistreren.less" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/ticketregistreren.html" afterPath="$PROJECT_DIR$/public/ticketregistreren.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/less/animate.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/js/wow.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/styleWerking.css" afterPath="$PROJECT_DIR$/public/less/styleWerking.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/less/styleWerking.less" afterPath="$PROJECT_DIR$/public/less/styleWerking.less" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/public/werking.html" afterPath="$PROJECT_DIR$/public/werking.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="TickTrade.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -43,21 +29,23 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="www" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/bin/www">
+      <file leaf-file-name="werking.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/public/werking.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
-              <folding />
+            <state vertical-scroll-proportion="-16.76923">
+              <caret line="61" column="52" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="52" />
+              <folding>
+                <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="register.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/public/register.html">
+      <file leaf-file-name="styleWerking.less" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/public/less/styleWerking.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-1.4982015">
-              <caret line="5" column="86" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="86" />
+            <state vertical-scroll-proportion="0.88856727">
+              <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -130,6 +118,8 @@
         <option value="$PROJECT_DIR$/public/less/notificaties.less" />
         <option value="$PROJECT_DIR$/public/notificaties.html" />
         <option value="$PROJECT_DIR$/public/controllers/clientVerzoekController.js" />
+        <option value="$PROJECT_DIR$/public/werking.html" />
+        <option value="$PROJECT_DIR$/public/less/styleWerking.less" />
       </list>
     </option>
   </component>
@@ -139,6 +129,9 @@
   </component>
   <component name="NamedScopeManager">
     <order />
+  </component>
+  <component name="PhpServers">
+    <servers />
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
@@ -334,9 +327,9 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\lucas\Desktop\TickTrade\public\images" />
-      <recent name="C:\Users\lucas\Desktop\TickTrade\public\less" />
       <recent name="C:\Users\lucas\Desktop\TickTrade\public\js" />
+      <recent name="C:\Users\lucas\Desktop\TickTrade\public\less" />
+      <recent name="C:\Users\lucas\Desktop\TickTrade\public\images" />
       <recent name="C:\Users\lucas\Desktop\TickTrade\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -518,7 +511,13 @@
       <option name="project" value="LOCAL" />
       <updated>1453195629431</updated>
     </task>
-    <option name="localTasksCounter" value="22" />
+    <task id="LOCAL-00022" summary="form validatie">
+      <created>1453197965982</created>
+      <option name="number" value="00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1453197965982</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TodoView">
@@ -534,15 +533,16 @@
     <frame x="-8" y="-8" width="1616" height="876" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22686376" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15681234" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33288044" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.22413793" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252688" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.14112903" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32880434" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.18120806" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.60461956" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36141303" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -553,7 +553,6 @@
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Mongo Explorer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3252688" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -606,7 +605,8 @@
     <MESSAGE value="onderhandelen alles staat klaar" />
     <MESSAGE value="accepted" />
     <MESSAGE value="accepted opgelost" />
-    <option name="LAST_COMMIT_MESSAGE" value="accepted opgelost" />
+    <MESSAGE value="form validatie" />
+    <option name="LAST_COMMIT_MESSAGE" value="form validatie" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -615,34 +615,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/config/passport.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.71854305">
-          <caret line="119" column="0" selection-start-line="119" selection-start-column="0" selection-end-line="119" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/auth.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.028145695">
-          <caret line="3" column="0" selection-start-line="3" selection-start-column="0" selection-end-line="3" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/config/database.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.2960199">
-          <caret line="7" column="2" selection-start-line="7" selection-start-column="2" selection-end-line="7" selection-end-column="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/package.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.68456376">
-          <caret line="24" column="31" selection-start-line="24" selection-start-column="31" selection-end-line="24" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/public/less/register.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-9.153846">
@@ -668,13 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="21" column="0" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/less/mytickets.less">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-19.423077">
-          <caret line="182" column="0" selection-start-line="182" selection-start-column="0" selection-end-line="187" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -929,15 +894,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="131" column="18" selection-start-line="131" selection-start-column="18" selection-end-line="131" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/public/notificaties.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="106" column="80" selection-start-line="106" selection-start-column="80" selection-end-line="106" selection-end-column="80" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -945,7 +901,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.101374574">
           <caret line="134" column="21" selection-start-line="134" selection-start-column="21" selection-end-line="134" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -961,7 +916,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.6942446">
           <caret line="102" column="7" selection-start-line="102" selection-start-column="7" selection-end-line="102" selection-end-column="7" />
-          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/register.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.2072464">
+          <caret line="5" column="86" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="86" />
         </state>
       </provider>
     </entry>
@@ -969,17 +930,58 @@
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
           <caret line="79" column="4" selection-start-line="79" selection-start-column="4" selection-end-line="79" selection-end-column="4" />
-          <folding />
         </state>
       </provider>
       <provider editor-type-id="com.intellij.database.editor.CsvTableFileEditorProvider">
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/public/register.html">
+    <entry file="file://$PROJECT_DIR$/public/less/mytickets.less">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-1.4982015">
-          <caret line="5" column="86" selection-start-line="4" selection-start-column="4" selection-end-line="5" selection-end-column="86" />
+        <state vertical-scroll-proportion="0.27062228">
+          <caret line="11" column="2" selection-start-line="11" selection-start-column="2" selection-end-line="11" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/js/wow.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/less/animate.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/notificaties.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.49204051">
+          <caret line="137" column="18" selection-start-line="137" selection-start-column="18" selection-end-line="137" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/werking.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-16.76923">
+          <caret line="61" column="52" selection-start-line="61" selection-start-column="47" selection-end-line="61" selection-end-column="52" />
+          <folding>
+            <element signature="n#header#0;n#body#0;n#html#0;n#!!top" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/less/styleWerking.less">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.88856727">
+          <caret line="128" column="22" selection-start-line="128" selection-start-column="22" selection-end-line="128" selection-end-column="22" />
           <folding />
         </state>
       </provider>
