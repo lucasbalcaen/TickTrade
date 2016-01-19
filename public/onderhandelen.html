@@ -78,7 +78,7 @@
     <input type="hidden" value="{{ arralletickets }}" id="alleTickets">
     <input type="hidden" value="{{ verzoek._id }}" id="idGesprek">
 
-    <h3 class="zondermargin">ticket</h3>
+    <h3 class="zondermargin">Ticket</h3>
     <div class="ui card" class="kaartje">
         <div class="content">
             <span class="right floated"><i class="user icon"></i>  {{ tickets[0].owner }} </span>
@@ -102,7 +102,7 @@
         </div>
     </div>
 
-    <h3>offered</h3>
+    <h3>Offered</h3>
 
     <div class="ui card" class="kaartje" ng-repeat="ticket in tickets" ng-if="$index > 0">
         <div class="content">

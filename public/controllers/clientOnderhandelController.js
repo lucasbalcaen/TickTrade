@@ -59,12 +59,19 @@
 
 
         $scope.trade = function() {
+            var socket = io.connect();
+            socket.on("connect",function(){
+                console.log("connected");
+            });
+
+            socket.on("disconnect",function(){
+                console.log("disconnected");
+            });
+
             var alleTickets = document.getElementById('alleTickets').value;
             var deel1 = alleTickets.replace('[','');
             var deel2 = deel1.replace(']','');
             var stukken = deel2.split(',');
-
-
 
             var idtickets =[];
 
@@ -82,13 +89,11 @@
             var userAanbieder = document.getElementById('userIdAnder').value;
             var userRuiler = document.getElementById('userIdJezelf').value;
 
+            var msg = [idaangeboden,userAanbieder,userRuiler,idtickets];
+
+            socket.emit("afhandelen",msg);
+
             //verzoek gaan verplaatsen naar andere db
-
-
-
-
-
-
 
                 // alle2 de ids van de mensen toevoegen om dan zo in de details te tonen
 
@@ -97,16 +102,7 @@
                 //de id's van alle tickets verwijderen uit de overzicht db
 
 
-
-
-
-
-
-
-
         }
-
-
 
     }]);
 

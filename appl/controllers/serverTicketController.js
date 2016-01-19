@@ -94,6 +94,32 @@ exports.getMyTraded = function (req, res) {
     });
 };
 
+exports.createAfgehandeld = function(idaangeboden,userAanbieder,userRuiler,idTickets){
+    var entry = new afhandelen({
+        ticketId: idaangeboden,
+        aangebodenId: userAanbieder,
+        userIdAanbieder:userRuiler,
+        ruilerId:idTickets
+    });
+
+    entry.save();
+
+    var id2 = idaangeboden;
+    var query = Ticket.remove({"_id":id2});
+    query.exec(function(err,results){
+        console.log("HIJ IS GEDELETED")
+    });
+
+    var id3 = userRuiler;
+    var query = Ticket.remove({"_id":id3});
+    query.exec(function(err,results){
+        console.log("HIJ IS GEDELETED")
+    });
+
+    res.redirect('/');
+};
+
+
 exports.createTraded = function (req, res) {
     var entry = new TradedTicket({
         title: req.body.formTicketTitle,

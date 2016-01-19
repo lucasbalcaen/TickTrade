@@ -9,6 +9,7 @@ var debug = require('debug')('TickTrade:server');
 var http = require('http');
 var ingelogdeUserController = require('../appl/controllers/ingelogdeUserController.js');
 var chatController = require('../appl/controllers/chatController.js');
+var ticketController = require('../appl/controllers/serverTicketController.js');
 
 
 /**
@@ -88,6 +89,18 @@ function handleIO(socket){
   socket.on("getmessages",function(msg){
     console.log("getmessages: "+msg);
     //chatController.getMessages(msg);
+  })
+
+  socket.on("afhandelen",function(msg){
+    console.log("afhandelen "+msg);
+
+    var idaangeboden = msg[0];
+    var userAanbieder = msg[1];
+    var userRuiler = msg[2];
+    var idtickets = msg[3];
+
+    ticketController.createAfgehandeld(idaangeboden,userAanbieder,userRuiler,idtickets);
+
   })
 
 }
