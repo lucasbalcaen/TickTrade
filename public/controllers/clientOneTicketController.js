@@ -8,7 +8,16 @@
 
     oneticket.controller('oneTicketController', ['$scope', '$http', '$routeParams', function($scope, $http,$routeParams) {
 
+        $http.get("/api/getUser").then(function (result) {
+            $scope.currentUser = result.data;
 
+            if(result.data==="") {
+                $scope.loggedIn = false;
+            }else{
+                $scope.loggedIn = true;
+            }
+
+        });
         $http.get("/api/tickets").then(function (result) {
            var obj = result.data;
           var path =window.location.pathname;

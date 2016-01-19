@@ -109,14 +109,7 @@
 
             socket.emit("afhandelen",msg);
 
-            //verzoek gaan verplaatsen naar andere db
-
-                // alle2 de ids van de mensen toevoegen om dan zo in de details te tonen
-
-                //dan verwijderen uit ruilverzoeken via id
-
-                //de id's van alle tickets verwijderen uit de overzicht db
-
+            window.location.replace("http://localhost:3000/");
 
         }
 
