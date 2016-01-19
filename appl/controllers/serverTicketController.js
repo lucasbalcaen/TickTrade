@@ -96,12 +96,11 @@ exports.getMyTraded = function (req, res) {
 
 exports.createAfgehandeld = function(idaangeboden,userAanbieder,userRuiler,idTickets){
     var entry = new afhandelen({
-        ticketId: idaangeboden,
-        aangebodenId: userAanbieder,
-        userIdAanbieder:userRuiler,
-        ruilerId:idTickets
+        ticketId: idTickets,
+        aangebodenId: idaangeboden,
+        userIdAanbieder:userAanbieder,
+        ruilerId:userRuiler
     });
-
 
     entry.save();
 
@@ -112,34 +111,54 @@ exports.createAfgehandeld = function(idaangeboden,userAanbieder,userRuiler,idTic
         console.log("HIJ IS GEDELETED")
     });
 
-    var id3 = userRuiler;
+    var id3 = idTickets;
+    console.log("ID3 IS "+id3);
     var query2 = Ticket.remove({"_id":id3});
     query2.exec(function(err,results){
         console.log("HIJ IS GEDELETED")
     });
 
-    res.redirect('/');
 };
 
 
-exports.createTraded = function (eigenTicketOwner,eigenTicketTitle,eigenTicketSort,eigenTicketDescription,eigenTicketAmount,eigenTicketPrice,eigenTicketCity,anderTicketOwner,anderTicketTitle,anderTicketSort,anderTicketDescription,anderTicketAmount,anderTicketPrice,anderTicketCity) {
+exports.createTraded = function (eigenTicketOwner,eigenTicketTitle,eigenTicketSort,eigenTicketDescription,eigenTicketAmount,eigenTicketPrice,eigenTicketCity,anderTicketOwner,anderTicketTitle,anderTicketSort,anderTicketDescription,anderTicketAmount,anderTicketPrice,anderTicketCity,eigenTicketUser,anderTicketUser) {
+    /*console.log("eigenTicketOwner "+eigenTicketOwner);
+    console.log("eigenTicketTitle "+eigenTicketTitle);
+    console.log("eigenTicketSort "+eigenTicketSort);
+    console.log("eigenTicketDescription "+eigenTicketDescription);
+    console.log("eigenTicketAmount "+eigenTicketAmount);
+    console.log("eigenTicketPrice "+eigenTicketPrice);
+    console.log("eigenTicketCity "+eigenTicketCity);
+    console.log("XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX");
+    console.log("anderTicketOwner "+anderTicketOwner);
+    console.log("anderTicketTitle "+anderTicketTitle);
+    console.log("anderTicketSort "+anderTicketSort);
+    console.log("anderTicketDescription "+anderTicketDescription);
+    console.log("anderTicketAmount "+anderTicketAmount);
+    console.log("anderTicketPrice "+anderTicketPrice);
+    console.log("anderTicketCity "+anderTicketCity);*/
+
     var entry = new TradedTicket({
         title: eigenTicketTitle,
         sort: eigenTicketSort,
+        description: eigenTicketDescription,
         price: eigenTicketPrice,
         amount: eigenTicketAmount,
         owner: eigenTicketOwner,
-        user: req.user._id,
+        user: eigenTicketUser,
+        city: eigenTicketCity,
         title2: anderTicketTitle,
         sort2: anderTicketSort,
+        description2: anderTicketDescription,
         price2: anderTicketPrice,
         amount2: anderTicketAmount,
-        user2: req.user._id
+        owner2: anderTicketOwner,
+        user2: anderTicketUser,
+        city2: anderTicketCity
+
     });
 
     entry.save();
-
-    res.redirect('/');
 
 };
 
@@ -182,8 +201,6 @@ exports.getEigenMeldingen=function(req,res){
     query.exec(function(err,obj) {
         res.json(obj);
     });
-
-
 
 };
 

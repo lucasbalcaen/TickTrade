@@ -82,7 +82,7 @@ function handleIO(socket){
     var tekst = msg[0];
     var verzender = msg[1];
     var chatroomID = msg[3];
-    chatController.create(tekst,verzender,chatroomID);
+    //chatController.create(tekst,verzender,chatroomID);
     socket.broadcast.emit("messages",msg);
   });
 
@@ -92,8 +92,6 @@ function handleIO(socket){
   })
 
   socket.on("afhandelen",function(msg){
-    console.log("afhandelen "+msg);
-
     var idaangeboden = msg[0];
     var userAanbieder = msg[1];
     var userRuiler = msg[2];
@@ -112,9 +110,11 @@ function handleIO(socket){
     var anderTicketAmount = msg[15];
     var anderTicketPrice = msg[16];
     var anderTicketCity = msg[17];
+    var eigenTicketUser = msg[18];
+    var anderTicketUser = msg[19];
 
+    ticketController.createTraded(eigenTicketOwner,eigenTicketTitle,eigenTicketSort,eigenTicketDescription,eigenTicketAmount,eigenTicketPrice,eigenTicketCity,anderTicketOwner,anderTicketTitle,anderTicketSort,anderTicketDescription,anderTicketAmount,anderTicketPrice,anderTicketCity,eigenTicketUser,anderTicketUser);
     ticketController.createAfgehandeld(idaangeboden,userAanbieder,userRuiler,idtickets);
-    ticketController.createTraded(eigenTicketOwner,eigenTicketTitle,eigenTicketSort,eigenTicketDescription,eigenTicketAmount,eigenTicketPrice,eigenTicketCity,anderTicketOwner,anderTicketTitle,anderTicketSort,anderTicketDescription,anderTicketAmount,anderTicketPrice,anderTicketCity);
   })
 
 }
