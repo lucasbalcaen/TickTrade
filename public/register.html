@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
     <title>Node Authentication</title>
     <link rel="stylesheet" type="text/css" href="less/navicoon.css"/>
@@ -69,50 +69,58 @@
 <div class="ui container" id="formgebied">
     <div class="ui segments">
         <div class="ui segment">
-            <form action="/signup" method="post" id="registerRegisterForm">
+            <form action="/signup" method="post" id="registerRegisterForm" name="frm">
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Voornaam:
                     </div>
-                    <input type="text" class="form-control" name="voornaam" placeholder="Uw voornaam">
+                    <input type="text" class="form-control" name="voornaam" ng-model="user.voornaam" placeholder="Uw voornaam" required>
+                    <span class="spanerror" ng-show="frm.voornaam.$dirty && frm.voornaam.$error.required">Required</span>
                 </div>
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Naam:
                     </div>
-                    <input type="text" class="form-control" name="naam" placeholder="Uw naam">
+                    <input type="text" class="form-control" ng-model="user.naam" name="naam" placeholder="Uw naam" required>
+                    <span class="spanerror" ng-show="frm.naam.$dirty && frm.naam.$error.required">Required</span>
                 </div>
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Email:
                     </div>
-                    <input type="text" class="form-control" name="email" placeholder="Uw email">
+                    <input type="text" class="form-control" name="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" ng-model="user.email" placeholder="Uw email" required>
+                    <span class="spanerror" ng-show="frm.email.$dirty && frm.email.$error.required">Required</span>
+                    <span class="spanerror" ng-show="frm.email.$dirty && frm.email.$error.email">Not an email</span>
                 </div>
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Gemeente:
                     </div>
-                    <input type="text" class="form-control" name="gemeente" placeholder="Uw gemeente">
+                    <input type="text" class="form-control" name="gemeente" ng-model="user.gemeente" placeholder="Uw gemeente" required>
+                    <span class="spanerror" ng-show="frm.gemeente.$dirty && frm.gemeente.$error.required">Required</span>
                 </div>
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Straat:
                     </div>
-                    <input type="text" class="form-control" name="straat" placeholder="Uw straat">
+                    <input type="text" class="form-control" name="straat" ng-model="user.straat" placeholder="Uw straat" required>
+                    <span class="spanerror" ng-show="frm.straat.$dirty && frm.straat.$error.required">Required</span>
                 </div>
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Nummer:
                     </div>
-                    <input type="text" class="form-control" name="nummer" placeholder="Uw huisnummer">
+                    <input type="text" class="form-control" name="nummer" ng-model="user.nummer" required placeholder="Uw huisnummer">
+                    <span class="spanerror" ng-show="frm.nummer.$dirty && frm.nummer.$error.required">Required</span>
                 </div>
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Password:
                     </div>
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Uw wachtwoord" required>
+                    <span class="spanerror" ng-show="frm.password.$dirty && frm.password.$error.required">Required</span>
                 </div>
-                <button class="ui inverted orange button" id="btnRegister" name="btnRegister" type="submit">Register<i class="right arrow icon"></i></button>
+                <button class="ui inverted orange button" ng-disabled="frm.$invalid" id="btnRegister" name="btnRegister" type="submit">Register<i class="right arrow icon"></i></button>
             </form>
             <p class="ponderforms">Already have an account? <a href="login.html">Login</a>  Or go <a href="index.html">Home</a></p>
 

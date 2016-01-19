@@ -24,6 +24,10 @@
                 <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
                 <div class="menu">
                     <div class="item" ng-show="loggedIn">
+                        <i class="alarm icon"></i>
+                        <a href="/notificaties">Notifications</a>
+                    </div>
+                    <div class="item" ng-show="loggedIn">
                         <i class="ticket icon"></i>
                         <a href="/mytickets">My Tickets</a>
                     </div>

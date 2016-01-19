@@ -117,3 +117,12 @@ header {
 .ponderforms a:hover {
   color: #c67605;
 }
+input.ng-invalid.ng-dirty {
+  border: 1px solid #f89406;
+}
+.spanerror {
+  color: orange;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 5px;
+}

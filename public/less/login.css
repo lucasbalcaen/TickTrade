@@ -108,3 +108,12 @@ header {
   text-align: center;
   font-family: 'Oswald', sans-serif;
 }
+input.ng-invalid.ng-dirty {
+  border: 1px solid #f89406;
+}
+.spanerror {
+  color: orange;
+  font-size: 12px;
+  margin-left: 5px;
+  margin-top: 5px;
+}

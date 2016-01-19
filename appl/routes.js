@@ -80,7 +80,7 @@ module.exports = function(app, passport) {
 
     // alle api calls ********************************************************************
 
-    app.get('/api/getuser',isLoggedIn, function(req,res){
+    app.get('/api/getuser', function(req,res){
         res.json(req.user);
         console.log("de user zijn id" + req.user.id);
         var userID = req.user.id;

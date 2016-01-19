@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
@@ -59,20 +59,23 @@
 <div class="ui container" id="formgebied">
     <div class="ui segments">
         <div class="ui segment">
-            <form action="/login" method="post" id="loginRegisterForm">
+            <form action="/login" method="post" name="frm" id="loginRegisterForm">
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Email:
                     </div>
-                    <input type="text" class="form-control" name="email" placeholder="Uw email">
+                    <input type="text" class="form-control" name="email" ng-pattern="/^[_a-z0-9]+(\.[_a-z0-9]+)*@[a-z0-9-]+(\.[a-z0-9-]+)*(\.[a-z]{2,4})$/" ng-model="user.email" placeholder="Uw email" required>
+                    <span class="spanerror" ng-show="frm.email.$dirty && frm.email.$error.required">Required</span>
+                    <span class="spanerror" ng-show="frm.email.$dirty && frm.email.$error.email">Not an email</span>
                 </div>
                 <div class="ui labeled input formdiv">
                     <div class="ui label oranjelabel">
                         Password:
                     </div>
-                    <input type="password" class="form-control" name="password">
+                    <input type="password" class="form-control" name="password" ng-model="user.password" placeholder="Uw wachtwoord" required>
+                    <span class="spanerror" ng-show="frm.password.$dirty && frm.password.$error.required">Required</span>
                 </div>
-                <button class="ui inverted orange button" id="btnLogin" name="btnLogin" type="submit">Login<i class="right arrow icon"></i></button>
+                <button class="ui inverted orange button" ng-disabled="frm.$invalid" id="btnLogin" name="btnLogin" type="submit">Login<i class="right arrow icon"></i></button>
             </form>
         </div>
     </div>

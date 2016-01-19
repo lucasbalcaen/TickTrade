@@ -25,6 +25,10 @@
             <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
             <div class="menu">
                 <div class="item" ng-show="loggedIn">
+                    <i class="alarm icon"></i>
+                    <a href="/notificaties">Notifications</a>
+                </div>
+                <div class="item" ng-show="loggedIn">
                     <i class="ticket icon"></i>
                     <a href="/mytickets">My Tickets</a>
                 </div>
@@ -61,7 +65,7 @@
     </div>
 </header>
 
-<p>My traded tickets</p>
+<h1 id="h1mytraded">My traded tickets</h1>
 <div id="divkaartjes">
 <div class="ui two column very relaxed grid" ng-controller="myTradedController"  >
     <div class="column" ng-repeat="traded in mytraded">

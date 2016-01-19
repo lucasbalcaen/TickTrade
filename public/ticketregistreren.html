@@ -13,15 +13,6 @@
 </head>
 <body>
 <header>
-    <!-- cdn for modernizr, if you haven't included it already -->
-    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/extras/modernizr-custom.js"></script>
-    <!-- polyfiller file to detect and load polyfills -->
-    <script src="http://cdn.jsdelivr.net/webshim/1.12.4/polyfiller.js"></script>
-    <script>
-        webshims.setOptions('waitReady', false);
-        webshims.setOptions('forms-ext', {types: 'date'});
-        webshim.polyfill('forms forms-ext');
-        </script>
     <div id="bovenbar">
         <div class="hamburger">
             <div></div>
@@ -32,9 +23,12 @@
         <div class="ui floating labeled icon dropdown button" id="rechterheader" ng-controller="userController">
             <i class="user icon"></i>
             <span class="text" id="user">{{ currentUser.local.voornaam || "user" }} </span>
-            <input type="hidden" value="{{ currentUser.local.voornaam }}" id="hiddenuser">
             <input type="hidden" value="{{ currentUser._id }}" id="hiddenuserid">
             <div class="menu">
+                <div class="item" ng-show="loggedIn">
+                    <i class="alarm icon"></i>
+                    <a href="/notificaties">Notifications</a>
+                </div>
                 <div class="item" ng-show="loggedIn">
                     <i class="ticket icon"></i>
                     <a href="/mytickets">My Tickets</a>
@@ -82,12 +76,13 @@
 <div class="ui container" id="formgebied">
         <div class="ui segments">
             <div class="ui segment">
-                <form method="post" action="/ticketregistreren" id="ticketRegisterForm">
+                <form method="post" action="/ticketregistreren" name="frm" id="ticketRegisterForm">
                     <div class="ui labeled input formdiv">
                         <div class="ui label oranjelabel labelkleur" >
                             Ticket:
                         </div>
-                        <input type="text" id="formTicketTitle" name="formTicketTitle" placeholder="Titel van het ticket">
+                        <input type="text" id="formTicketTitle" ng-model="form.ticket" name="formTicketTitle" placeholder="Titel van het ticket" required>
+                        <span class="spanerror" ng-show="frm.formTicketTitle.$dirty && frm.formTicketTitle.$error.required">Required</span>
                     </div>
                     <div class="ui dropdown selection formdiv" id="dropdownFormTicketRegister" tabindex="0" formdiv>
                         <select name="formTicketSort">
@@ -108,35 +103,40 @@
                         <div class="ui label oranjelabel">
                             Omschrijving:
                         </div>
-                        <input type="text" id="formTicketDescription" name="formTicketDescription" placeholder="Omschrijving van het evenement">
+                        <input type="text" id="formTicketDescription" ng-model="form.omschrijving" required name="formTicketDescription" placeholder="Omschrijving van het evenement">
+                        <span class="spanerror" ng-show="frm.formTicketDescription.$dirty && frm.formTicketDescription.$error.required">Required</span>
                     </div>
                     <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Prijs (€):
                         </div>
-                        <input type="text" id="formTicketPrice" name="formTicketPrice" placeholder="Prijs per ticket"/>
+                        <input type="text" id="formTicketPrice" name="formTicketPrice" required ng-model="form.price" placeholder="Prijs per ticket"/>
+                        <span class="spanerror" ng-show="frm.formTicketPrice.$dirty && frm.formTicketPrice.$error.required">Required</span>
                     </div>
                     <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Aantal:
                         </div>
-                        <input type="number" id="formTicketAmount" name="formTicketAmount" placeholder="Aantal tickets"/>
+                        <input type="number" id="formTicketAmount" name="formTicketAmount" placeholder="Aantal tickets" required ng-model="form.amount"/>
+                        <span class="spanerror" ng-show="frm.formTicketAmount.$dirty && frm.formTicketAmount.$error.required">Required</span>
                     </div>
                     <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Datum:
                         </div>
-                        <input type="date" id="formDatum" name="formDatum" placeholder="Datum evenement"/><br />
+                        <input type="date" id="formDatum" name="formDatum" placeholder="Datum evenement" required ng-model="form.datum"/><br />
+                        <span class="spanerror" ng-show="frm.formDatum.$dirty && frm.formDatum.$error.required">Required</span>
                     </div>
 
                     <div class="ui labeled input formdiv labelkleur">
                         <div class="ui label oranjelabel">
                             Stad:
                         </div>
-                        <input type="text" id="formCity" name="formCity" placeholder="Stad evenement"/><br />
+                        <input type="text" id="formCity" name="formCity" placeholder="Stad evenement" required ng-model="form.city"/><br />
+                        <span class="spanerror" ng-show="frm.formCity.$dirty && frm.formCity.$error.required">Required</span>
                     </div>
                     <div class="ui labeled input formdiv labelkleur">
-                    <button class="ui inverted orange button" id="btnSaveTicket" name="btnSaveTicket">Registreer uw ticket<i class="right arrow icon"></i></button>
+                    <button ng-disabled="frm.$invalid" class="ui inverted orange button" id="btnSaveTicket" name="btnSaveTicket">Registreer uw ticket<i class="right arrow icon"></i></button>
                     </div>
                 </form>
             </div>
