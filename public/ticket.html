@@ -106,7 +106,7 @@
     <div id="popup" class="popup unvisible" ng-controller="myTicketsController">
         <input type="hidden" name="eigenID" id="eigenID" value=" {{ mytickets[0].user }} ">
         <input type="hidden" name="eigenNaam" id="eigenNaam" value=" {{ mytickets[0].owner}} ">
-        <h3 class="header oranje">Selecteer een of meerdere tickets</h3>
+        <h3 class="header oranje">Selecteer een ticket</h3>
 
         <div id="myticketcontainer">
             <div ng-repeat="ticketje in mytickets" id="{{ ticketje._id }}" onclick="selecteren(this)">

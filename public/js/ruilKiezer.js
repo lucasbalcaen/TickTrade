@@ -27,7 +27,7 @@ function selecteren(clicked){
     }else{
         clicked.className+=" selected";
         var id = clicked.id;
-        geselecteerd.push(id);
+        geselecteerd= id;
         document.getElementById("formGeselecteerdId").value = geselecteerd;
 
     }

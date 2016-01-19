@@ -29,16 +29,23 @@
             arrticketId = stringticketId.split(',');
             aangebodenId.push(result.data.aangebodenId);
             arrAlleTickets = aangebodenId.concat(arrticketId);
-            for (var i=0;i<arrAlleTickets.length;i++){
+
               
                 $http({
                     url:"/api/ticketViaId",
                     method:"GET",
-                    params:{ids:arrAlleTickets[i]}
+                    params:{ids:arrAlleTickets[0]}
                 }).then(function(result){
                     arrTickets.push(result.data);
+                    $http({
+                        url:"/api/ticketViaId",
+                        method:"GET",
+                        params:{ids:arrAlleTickets[1]}
+                    }).then(function(result){
+                        arrTickets.push(result.data);
+                    });
                 });
-            }
+
 
             $scope.tickets = arrTickets;
             $scope.arralletickets = arrAlleTickets;
