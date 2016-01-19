@@ -65,65 +65,113 @@
     </header>
 
 
+    <div ng-controller="notificatieController" id="verzoekContainer">
 
+        <h1>My traderequests</h1>
 
-
-<div ng-controller="notificatieController" id="verzoekContainer" >
-
-    <h1>mijn notificaties</h1>
-    <div ng-repeat="verzoek in verzoeken" class="verzoek">
-        <div class="content">
-                        <h5>{{verzoek[1].title}}</h5>
-                        <img src="images/arrow486.png">
-                    <div id="geselecteerd">
+        <div ng-repeat="verzoek in verzoeken" class="verzoek">
+            <div class="ui card">
+                <div class="content">
+                    <div class="header">
+                        {{verzoek[1].title}}
+                    </div>
+                    <div class="meta">
+                        <span><i class="user icon"></i></span>Your ticket
+                    </div>
+                    <div class="description">
+                        <i class="exchange icon"></i>
+                    </div>
+                    <div class="header">
                         <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">{{geselecteerd.title}}</p>
                         <input type="hidden" value="verzoek[1].user" id="userIdAnder">
                         <input type="hidden" value="verzoek[2].user" id="userIdJezelf">
                         <input type="hidden" value="verzoek[2].owner" id="naamAnder">
                     </div>
-                <div id="buttons">
-                    <button class="ui grey button" id="acceptbtn" ng-click="accept(verzoek[0],verzoek[2].user)"><i class="checkmark icon"></i></button>
-                    <button class="ui grey button" id="declinebtn" ng-click="decline(verzoek[0])"><i class="remove icon"></i></button>
+                    <div class="meta" ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">
+                        <span><i class="user icon"></i></span>{{ geselecteerd.owner }}
+                    </div>
                 </div>
-        </div>
-    </div>
-    <br>
-
-
-</div>
-
-
-    <div ng-controller="notificatieController" id="pendingContainer" >
-    <h1>pending</h1>
-
-    <div ng-repeat="verzoek in bekeken" class="verzoek">
-        <div class="content">
-            <h5>{{verzoek[1].title}}</h5>
-            <img src="images/arrow486.png">
-            <div id="geselecteerdd">
-                <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">{{geselecteerd.title}}</p>
-
-                <input type="hidden" value="verzoek[1].user" id="userIdAnder2">
-                <input type="hidden" value="verzoek[2].user" id="userIdJezelf2">
-                <input type="hidden" value="verzoek[2].owner" id="naamAnder2">
-            </div>
-            <div id="buttons2">
-                <button class="ui grey button" id="chatbtn" ng-click="accept(verzoek[0],verzoek[2].user)">onderhandel</button>
-
+                <div class="extra content">
+                    <div class="ui two buttons">
+                        <div class="ui basic green button" ng-click="accept(verzoek[0],verzoek[2].user)">Approve</div>
+                        <div class="ui basic red button" ng-click="decline(verzoek[0])">Decline</div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
+
+
+    <div ng-controller="notificatieController" id="pendingContainer">
+        <h1>Your approved trade requests</h1>
+
+        <div ng-repeat="verzoek in bekeken" class="verzoek">
+
+            <div class="ui card">
+                <div class="content">
+                    <div class="header">
+                        {{verzoek[1].title}}
+                    </div>
+                    <div class="meta">
+                        <span><i class="user icon"></i></span>Your ticket
+                    </div>
+                    <div class="description">
+                        <i class="exchange icon"></i>
+                    </div>
+                    <div class="header">
+                        <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">{{geselecteerd.title}}</p>
+                        <input type="hidden" value="verzoek[1].user" id="userIdAnder2">
+                        <input type="hidden" value="verzoek[2].user" id="userIdJezelf2">
+                        <input type="hidden" value="verzoek[2].owner" id="naamAnder2">
+                    </div>
+                    <div class="meta" ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">
+                        <span><i class="user icon"></i></span>{{ geselecteerd.owner }}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="ui basic orange button" ng-click="accept(verzoek[0],verzoek[2].user)">Negotiate
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
 
-
-    <div ng-controller="eigenNotificatieController" id="acceptedContainer" >
-        <h1>accepted</h1>
+    <div ng-controller="eigenNotificatieController" id="acceptedContainer">
+        <h1>Your accepted trade requests</h1>
 
         <div ng-repeat="verzoek in accepted" class="verzoek">
-            <div class="content">
+            <div class="ui card">
+                <div class="content">
+                    <div class="header">
+                        {{verzoek[1].title}} <!-- ZE STAAN HIER OMGEKEERD DA MOE IER DEN ANDEREN ZIJN -->
+                    </div>
+                    <div class="meta">
+                        <span><i class="user icon"></i></span>Your ticket
+                    </div>
+                    <div class="description">
+                        <i class="exchange icon"></i>
+                    </div>
+                    <div class="header">
+                        <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">{{geselecteerd.title}}</p>
+                        <input type="hidden" value="verzoek[1].user" id="userIdAnder3">
+                        <input type="hidden" value="verzoek[2].user" id="userIdJezelf3">
+                        <input type="hidden" value="verzoek[2].owner" id="naamAnder3">
+                    </div>
+                    <div class="meta" ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">
+                        <span><i class="user icon"></i></span>{{ geselecteerd.owner }}
+                    </div>
+                </div>
+                <div class="extra content">
+                    <div class="ui basic orange button" ng-click="accept(verzoek[0],verzoek[2].user)">Negotiate
+                    </div>
+                </div>
+            </div>
+
+            <!--<div class="content">
                 <h5>{{verzoek[1].title}}</h5>
                 <img src="images/arrow486.png">
+
                 <div id="geselecteerddd">
                     <p ng-repeat="geselecteerd in verzoek" ng-if="$index > 1">{{geselecteerd.title}}</p>
 
@@ -132,11 +180,13 @@
                     <input type="hidden" value="verzoek[2].owner" id="naamAnder3">
                 </div>
                 <div id="buttons3">
-                    <button class="ui grey button" id="bekijkbtn" ng-click="accept(verzoek[0],verzoek[2].user)">onderhandel</button>
+                    <button class="ui grey button" id="bekijkbtn" ng-click="accept(verzoek[0],verzoek[2].user)">
+                        onderhandel
+                    </button>
 
                 </div>
             </div>
-        </div>
+        </div>-->
     </div>
 
 
