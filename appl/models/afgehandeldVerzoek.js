@@ -6,7 +6,7 @@
 var mongoose = require('mongoose');
 
 var afgehandeldScheme = mongoose.Schema({
-    ticketId: Array,
+    ticketId: String,
     aangebodenId: String,
     userIdAanbieder:String,
     ruilerId:String
