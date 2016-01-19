@@ -133,6 +133,8 @@ module.exports = function(app, passport) {
         return ticketController.getEigenMeldingen(req,res);
     });
 
+
+
     // alle posts in de nav *******************************************************************
 
     app.post('/signup', passport.authenticate('local-signup', {

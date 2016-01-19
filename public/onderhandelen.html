@@ -69,14 +69,67 @@
 
 
 <h1 id="h1tje">Negotiate & Trade</h1>
+<div id="containerAlles">
 
+<div ng-controller="verzoekController"  id="containerTickets">
 
-<div ng-controller="verzoekController"  >
     <input type="hidden" value="{{ tickets[0]['user'] }}" id="userIdJezelf">
     <input type="hidden" value="{{ tickets[1]['user'] }}" id="userIdAnder">
+    <input type="hidden" value="{{ arralletickets }}" id="alleTickets">
     <input type="hidden" value="{{ verzoek._id }}" id="idGesprek">
-</div>
 
+    <h3 class="zondermargin">ticket</h3>
+    <div class="ui card" class="kaartje">
+        <div class="content">
+            <span class="right floated"><i class="user icon"></i>  {{ tickets[0].owner }} </span>
+            <div class="header">
+                {{ tickets[0].title }}
+            </div>
+            <div class="content">
+                {{ tickets[0].sort }}
+                <span id="spanprijs" class="right floated"><i class="euro icon"></i>  {{ tickets[0].price }} </span>
+                <span id="spanticket" class="right floated"><i class="ticket icon"></i>  {{ tickets[0].amount }} </span>
+            </div>
+            <div class="description" id="description">
+                {{ tickets[0].description }}
+
+            </div>
+            <div class="extra content" id="eventinfo">
+                <span class="right floated"><i class="location arrow icon"></i>{{ tickets[0].city }}</span>
+                <span><i class="calendar icon"></i>{{  tickets[0].datum }}</span>
+            </div>
+
+        </div>
+    </div>
+
+    <h3>offered</h3>
+
+    <div class="ui card" class="kaartje" ng-repeat="ticket in tickets" ng-if="$index > 0">
+        <div class="content">
+            <span class="right floated"><i class="user icon"></i>  {{ ticket.owner }} </span>
+            <div class="header">
+                {{ ticket.title }}
+            </div>
+            <div class="content">
+                {{ ticket.sort }}
+                <span  class="right floated"><i class="euro icon"></i>  {{ ticket.price }} </span>
+                <span  class="right floated"><i class="ticket icon"></i>  {{ ticket.amount }} </span>
+            </div>
+            <div class="description" >
+                {{ ticket.description }}
+
+            </div>
+            <div class="extra content" >
+                <span class="right floated"><i class="location arrow icon"></i>{{ ticket.city }}</span>
+                <span><i class="calendar icon"></i>{{  ticket.datum }}</span>
+            </div>
+
+        </div>
+    </div>
+    <button class="ui orange button" id="btnTrade" ng-click="trade(verzoek._id)"  ng-show="tickets[0].owner==currentUser.local.voornaam">Trade!</button>
+    <p>{{ currentUser.local.voornaam }}</p>
+</div>
+<div id="messageContainer">
 <div id="messagebox">
     <div id="bovenste">
         <p>Live Chat</p>
@@ -90,6 +143,9 @@
     </div>
     <button class="ui inverted orange button" id="sendit">Send</button>
 </div>
+</div>
+
+    </div>
 
 
    <script src="../js/navnavigatie.js"></script>

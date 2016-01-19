@@ -4,6 +4,7 @@
 var Ticket = require('../models/ticket.js');
 var TradedTicket = require('../models/tradedticket.js');
 var ruilverzoek = require('../models/ruilverzoek.js');
+var afhandelen = require('../models/afgehandeldVerzoek.js');
 exports.create = function(req,res)
 {
 
@@ -159,6 +160,8 @@ exports.getEigenMeldingen=function(req,res){
 
 
 };
+
+
 
 
 
