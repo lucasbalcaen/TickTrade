@@ -13,7 +13,7 @@ exports.create = function(req,res)
             sort: req.body.formTicketSort,
             description: req.body.formTicketDescription,
             price: req.body.formTicketPrice,
-            amount: req.body.formTicketAmount,
+            amount: "1",
             owner: req.user.local.voornaam,
             user: req.user._id,
             city: req.body.formCity,
@@ -91,6 +91,7 @@ exports.getMyTraded = function (req, res) {
     var query = TradedTicket.find({"user": user.toString()});
     query.exec(function (err, results) {
         res.json(results);
+
     });
 };
 
