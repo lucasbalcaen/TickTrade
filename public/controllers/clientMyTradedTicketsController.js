@@ -6,9 +6,16 @@
 
     mytraded.controller('myTradedController', ['$scope', '$http', function($scope, $http) {
         $http.get("/api/mytraded").then(function (result) {
-            $scope.mytraded = result.data;
+            var resultaat = result.data;
 
-        })
+            $http.get("/api/mytraded2").then(function (result2) {
+                var resultaat2 =  result2.data;
+                $scope.mytraded = resultaat.concat(resultaat2);
+            });
+        });
+
+
+
     }]);
 
     mytraded.controller('userController', ['$scope', '$http', function($scope, $http, $rootScope) {
